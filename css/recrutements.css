@@ -1,0 +1,197 @@
+/* -- VARIABLES ET STYLES DE BASE -- */
+:root {
+     --bg-main: #F2F1EC;
+     --bg-secondary: rgb(217, 217, 217); 
+     --text-main: #4b574d;
+     --font-main: 'Inter', sans-serif;
+}
+
+body {
+     margin: 0;
+     font-family: var(--font-main);
+     background-color: var(--bg-main);
+     color: var(--text-main);
+     overflow-x: hidden;
+}
+
+a {
+     text-decoration: none;
+     color: var(--text-main);
+}
+
+.bold {
+     font-weight: bold;
+}
+
+.nextbutton {
+background-color: var(--bg-secondary);
+border: none;
+font-size: 3rem;
+color: var(--text-main);
+padding: 1rem 2rem;
+border-radius: 10px;
+cursor: pointer;
+display: block;
+margin: 2rem auto 0 auto;
+}
+
+
+/* Infos*/
+
+.title {
+     font-size: 6rem;
+     font-weight: bold;
+     text-align: center;
+     margin-top: 2rem;
+}
+.texttitle {
+     font-size: 2.5rem;
+     text-align: center;
+     margin: auto;
+     margin-top: 0px;
+     max-width: 1000px;
+}
+
+.preform {
+     display: block;
+     max-width: 800px;
+     text-align: center;
+     margin: 0 auto;
+}
+.preform p {
+     font-size: 3rem;
+     margin-top: 4rem;
+     margin-bottom: 1rem;
+     font-weight: bold;
+}
+.preform label {
+     font-size: 2rem;
+}
+
+/* * FAQ */
+
+.FAQ {
+     max-width: fit-content;
+     margin: 0 auto;
+     padding: 2rem;
+     border-radius: 10px;
+     text-align: center;
+}
+.FAQ h1 {
+     font-size: 3rem;
+     margin-bottom: 2rem;
+
+}
+.faqq {
+     font-size: 2rem;
+     background-color: var(--bg-secondary);
+     padding: 1rem;
+     border-radius: 10px;
+     font-weight: bold;
+}
+
+.questionsintro {
+     font-size: large;
+     font-size: 2rem;
+     margin-top: 2rem;
+     padding: 1rem;
+}
+
+hr {
+     width: 60%;
+}
+/* * Début formulaire */
+
+
+.formpres label {
+     font-size: 2rem;
+     margin-bottom: 0.5rem;
+     text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+     width: 52%;
+     padding: 0.5rem;
+     margin: 0px auto 1.5rem auto;
+     border: 1px solid;
+     border-radius: 10px;
+     font-size: 1.2rem;
+     background-color: var(--bg-secondary);
+     height: 35px;
+
+}
+
+.littlequestion {
+     width: 100% !important;
+}
+
+.form-group {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+.container1 {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     margin: 2rem 2rem;
+     gap: 6rem;
+}
+
+
+
+
+/* ! forms recrutement */
+
+form {
+     display: block;
+     text-align: center;
+     margin: 0 auto;
+}
+form p {
+     font-size: 2rem;
+     margin-bottom: 0.5rem;
+}
+
+/* ! fin de formulaire */
+.notation {
+     background-color: var(--bg-secondary);
+     padding: 0.5rem 2rem 2rem 2rem;
+     border-radius: 10px;
+     display: block;
+     margin: 3rem auto 0 auto;
+     max-width: 800px;
+}
+.notation p {
+     font-size: 3rem;
+}
+.stars {
+     font-size: 4rem;
+     display: flex;
+     justify-content: center;
+     gap: 3rem;
+}
+
+
+.questrem {
+     font-size: 3rem;
+     margin-top: 3rem;
+     margin-bottom: 1rem;
+     font-weight: bold;
+}
+
+
+.finalsubmit {
+     background-color: var(--bg-secondary);
+     border: 1px solid black;
+     font-size: 3rem;
+     color: var(--text-main);
+     padding: 1rem 2rem;
+     border-radius: 10px;
+     cursor: pointer;
+     display: block;
+     margin: 2rem auto 0 auto;
+}

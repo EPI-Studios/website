@@ -4,6 +4,7 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>EPI | Recrutements</title>
+     <link rel="stylesheet" href="../css/recrutements.css">
 </head>
 <body>
      <section class="nav">
@@ -25,10 +26,271 @@
      
      </section>
 
-     <p>Recrutements</p>
+     <p class="title">Recrutements</p>
 
      <!-- ! Ici, je fais le form pour les dév, en fonction de la réponse
-      ! à la question 1, j'afficherai différentes questions avec JS-->
+     ! à la question 1, j'afficherai différentes questions avec JS du style if(graphiste){form 2}
+     !-->
 
+     <p class="texttitle">
+          Vous avez envie de vous investir dans un projet durable qui 
+          vous apportera des compétences, du savoir-faire en équipe, et
+          une autonomie sans failles ? <br>
+          Rejoignez EPI Studio en tant que développeur ! <!-- TODO: modifier le mot selon réponse form 1-->
+     </p>
+
+     <!--TODO: Les radios buttons sont pas jolis donc je vais les refaire avec JS-->
+     <form id="preform" class="preform">
+          <p>Pour quel poste candidatez-vous ?</p>
+          
+          <input type="radio" name="poste" id="dev" value="dev">
+          <label for="dev">Développeur</label>
+          <br>
+
+          <input type="radio" name="poste" id="graphiste" value="graphiste">
+          <label for="graphiste">Graphiste</label>
+          <br>
+          <input type="radio" name="poste" id="cm" value="cm">
+          <label for="cm">Community Manager (CM)</label>
+          <br>
+     </form>
+
+
+     <section class="FAQ">
+          <h1>F.A.Q - Avant de commencer la candidature</h1>
+
+          <p class="faqq">Quels sont les avantages d'EPI-Studio ?</p>
+          <!--TODO à faire avec JS en mode quand on clique dessus ça mets le texte-->
+          <!--TODO rajouter une icone de fleche vers le bas-->
+
+          <p class="faqq">Quel est le statut fiscal d'EPI-Studio ?</p>
+
+          <p class="faqq">Quel est le but d'EPI-Studio ?</p>
+
+          <p class="faqq">Quelles sont les compétences requises ?</p>
+          <!-- ! à modifier selon la réponse au form 1-->
+
+          <p class="questionsintro">
+               Vous avez d'autres questions? <br>
+               Pas de panique, vous pourrez les poster à la fin
+               de votre candidature.
+          </p>
+     </section>
+     
+     <hr>
+
+     <!-- ! Form présentation pour tous les rôles-->
+     <form id="formpres" class="formpres">
+          
+          <div class="container1">
+               <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" name="name" class="littlequestion" required>
+               </div>
+
+               <div class="form-group">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" name="firstname" required class="littlequestion">
+               </div>
+
+               <div class="form-group">
+                    <label for="age">Âge</label>
+                    <input type="number" name="age" required class="littlequestion">
+               </div>
+          </div>
+
+
+          <div class="form-group">
+               <label for="email">Email</label>
+               <input type="email" name="email" required placeholder="gael.tournier@epistudios.fr">
+          </div>
+
+          <div class="form-group">
+               <label for="presentation">Présentation générale (minimum de 50 mots)</label>
+               <input type="text" name="presentation" required minlength="50"
+               placeholder="Je suis passioné d'informatique, j'aime le hockey, etc.">
+          </div>
+
+          <div class="form-group">
+               <label for="parcours">Présentation de votre parcours d'études</label>
+               <input type="text" name="parcours" required placeholder="J'ai un bac + 3 en anglais, et j'ai travaillé en tant que barman...">
+          </div>
+
+          <div class="form-group">
+               <label for="cv">Joignez votre CV à votre candidature. <br>
+               Pas besoin de lettre de motivation ! (pdf uniquement)</label>
+               <input type="file" name="cv" accept=".pdf" required>
+               <!--TODO: Changer l'icone d'upload par une icône un peu mieux-->
+          </div>
+          <button class="nextbutton">Suivant</button>
+
+     </form>
+
+
+     <!-- ! Form développement -->
+     <form id="formdev" class="formdev" tag="hidden">
+
+          <p class="title">Experience</p>
+
+          <p class="texttitle">
+               Vous allez maintenant répondre à quelques questions 
+               concernant votre experience avec le développement.
+               C'est la partie 2/3 de votre candidature !
+          </p>
+
+          <p>Avez-vous de l'experience avec les projets Minecraft?</p>
+          <input type="text" name="experience_minecraft"
+          placeholder="Oui, j'ai déjà créé des plugins, un serveur, etc.">
+
+          <p>Quels sont vos languages maitrisés?</p>
+          <input type="text" name="languages" 
+          placeholder="Java, Python, C++, etc.">
+
+          <p>Quel est votre language de prédilection ?</p>
+          <input type="text" name="favorite_language" 
+          placeholder="Je suis expert en Java.">
+
+          <p>Décrivez un projet sur lequel vous avez joué un rôle majeur</p>
+          <input type="text" name="major_project" 
+          placeholder="J'étais chargé de développer le site de ma boite...">
+
+          <p>Comment procédez-vous à la chasse au bug?</p>
+          <input type="text" name="bug_hunting" 
+          placeholder="Je commence par...">
+
+          <p>Maitrisez-vous Git, Github? Quelle est votre experience avec ?</p>
+          <input type="text" name="git_experience" 
+          placeholder="Oui, j'ai déjà utilisé Git dans un projet...">
+
+          <p>Comment sécurisez-vous votre code?</p>
+          <input type="text" name="code_security" 
+          placeholder="J'applique une règle de sécurité...">
+
+          <p>Avez-vous une experience avec des clients?</p>
+          <input type="text" name="client_experience" 
+          placeholder="Oui, j'ai déjà travaillé avec des clients...">
+
+          <button class="nextbutton">Suivant</button>
+     </form>
+
+
+     <!-- ! Form graphiste -->
+     <form id="formgraph" tag="hidden">
+
+          <p class="title">Experience</p>
+
+          <p class="texttitle">
+               Vous allez maintenant répondre à quelques questions
+               concernant votre experience avec le graphisme.
+               C'est la partie 2/3 de votre candidature !
+          </p>
+
+          <p>Avez-vous de l'experience avec les projets Minecraft?</p>
+          <input type="text" name="experience_minecraft_graph"
+          placeholder="j'ai déjà créé des textures, des skins, etc.">
+
+          <p>Quels sont vos styles maitrisés?</p>
+          <input type="text" name="styles" 
+          placeholder="Pixel art, 3D, etc.">
+
+          <p>Quel est votre processus de création lors d'une commande?</p>
+          <input type="text" name="creation_process" 
+          placeholder="Je commence par faire une V1...">
+
+          <p>décrivez un projet sur lequel vous avez joué un rôle majeur</p>
+          <input type="text" name="major_project_graph" 
+          placeholder="J'étais chargé de créer des visuels pour une entreprise...">
+
+          <p>Comment gérez-vous les retours d'un directeur artistique ?</p>
+          <input type="text" name="art_director_feedback" 
+          placeholder="J'essaye d'intègrer ses retours au maximum...">
+
+          <p>Avez-vous un portfolio public ? (si oui, intègrez le lien)</p>
+          <input type="text" name="portfolio" 
+          placeholder="https://behance.net/monportfolio">
+
+          <p>Quels sont vos logiciels maitrisés ?</p>
+          <input type="text" name="software_skills" 
+          placeholder="Photoshop, Illustrator, Blender, etc.">
+
+          <button class="nextbutton">Suivant</button>
+     </form>
+
+     <!-- ! Form community manager -->
+     <form id="formcm" tag="hidden">
+          <p class="title">Experience</p>
+
+          <p class="texttitle">
+               Vous allez maintenant répondre à quelques questions
+               concernant votre experience avec le community management.
+               C'est la partie 2/3 de votre candidature !
+          </p>
+
+          <p>Maitrisez-vous une autre langue que le français (B2 minimum) ?</p>
+          <input type="text" name="other_language" 
+          placeholder="Anglais, Espagnol, etc.">
+
+          <p>Quelle est votre experience avec le CM (Community Management) ?</p>
+          <input type="text" name="cm_experience" 
+          placeholder="J'ai déjà géré les réseaux sociaux d'une entreprise...">
+
+          <p>Quels sont vos réseaux sociaux de prédilection ?</p>
+          <input type="text" name="preferred_social_media" 
+          placeholder="Je connais l'algorithme de Tiktok...">
+
+          <p>Décrivez un projet sur lequel vous avez joué un rôle majeur</p>
+          <input type="text" name="major_project_cm" 
+          placeholder="J'étais chargé d'une équipe de 3 CM...">
+
+          <p>Comment gérez-vous les retours des utilisateurs?</p>
+          <input type="text" name="user_feedback" 
+          placeholder="Je réponds aux commentaires...">
+
+          <p>Comment mettez-vous en avant la marque que vous représentez?</p>
+          <input type="text" name="brand_promotion" 
+          placeholder="Je crée des contenus engageants...">
+
+          <p>Comment fidélisez-vous la communautée d'une marque?</p>
+          <input type="text" name="community_loyalty" 
+          placeholder="Events, posts engageants, etc.">
+
+          <button class="nextbutton">Suivant</button>
+
+     </form>
+
+     <form id="formfinished">
+          <p class="title">Votre candidature est terminée !</p>
+
+          <p class="texttitle">
+               <span class="bold"> N'oubliez pas d'enregistrer votre candidature</span> avec le bouton
+               ci-dessous, vous pouvez également poser vos
+               questions et noter le processus de recrutement.
+
+               <span class="bold">Une réponse vous sera obligatoirement envoyée.
+               Si vous n'avez pas reçu de réponse en deux semaines,
+               contactez gael.tournier@epistudios.fr !</span>
+          </p>
+
+          <div class="notation">
+               <p>Notez le processus de recrutement!</p>
+               <div class="stars">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+               </div>
+          </div>
+
+          <p class="questrem">Des questions/Remarques?</p>
+          <input type="text" name="questions">
+
+          <br>
+
+          <button type="submit" class="finalsubmit" id="finalsubmit">Envoyer</button>
+     </form>
+
+
+     <!--TODO Inserer le footer-->
 </body>
 </html>
