@@ -1,161 +1,343 @@
+/* -- VARIABLES ET STYLES DE BASE -- */
+:root {
+    --bg-main: #F2F1EC;
+    --bg-secondary: #DADCD9;
+    --text-main: #536056;
+    --font-main: 'Inter', sans-serif;
+}
+
 body {
-     margin: 0;
-     overflow-x: hidden;
-     background-color: #F2F1EC;
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
 }
-img {
-     width: 100px;
-     height: 100px;
-}
+
 a {
-     text-decoration: none;
-     color: red;
+    text-decoration: none;
+    color: var(--text-main);
 }
 
+/* -- HEADER & NAVIGATION -- */
 .iconcontainer {
-     display: flex;
-     flex-direction: row;
-     justify-content: space-between;
-     width: 100%;
-}
-.iconcontainer .discordicon {
-     align-self: flex-start;
-     margin-left: 10px;
-}
-.iconcontainer .githubicon {
-     align-self: flex-end;
-     margin-right: 10px;
-     margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 2rem;
+    gap: 1rem;
 }
 
+.iconcontainer img {
+    width: 30px;
+    height: 30px;
+}
 
 .nav {
-     margin-top: -70px;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 10;
 }
-.navbar {
-     display: flex;
-     justify-content: center;
-     text-align: center;
-     max-width: 1000px;
-     margin: 0 auto;
-     margin-top: -130px;
-}
+
 .backgroundnavbar {
-     background-color: #DADCD9;
-     padding: 10px;
-     padding-top: 50px;
-     padding-bottom: 50px;
-     text-align: center;
-     max-width:900px;
-     margin: 0 auto;
-     border-radius: 50px;
-}
-.feuille1 {
-     width: auto;
-     height: 50px;
-     margin-right: 30px;
-     margin-top: 50px;
-}
-.feuille2 {
-     width: auto;
-     height: 50px;
-     transform: rotate(180deg);
-     margin-left: 30px;
-     margin-top: 50px;
+    background-color: var(--bg-secondary);
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 10px;
 }
 
-.serv1 {
-     font-size: 40px;
-     color: #536056;
-     margin-top: 50px;
-     margin-right: 20px;
-     font-family: 'Inter', sans-serif;
-}
-.proj1 {
-     font-size: 40px;
-     color: #536056;
-     margin-top: 50px;
-     margin-left: 20px;
-     font-family: 'Inter', sans-serif;
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.bust1 {
-     height: 150px;
-     width: auto;
+.navbar .feuille1, .navbar .feuille2 {
+    width: 50px;
+    height: auto;
 }
 
-/* * End of Navbar */
-
-/* * Presentation */
-
-.backgroundpres {
-     background-color: #DADCD9;
-     padding-left: 1600px;
-     padding-bottom: 600px;
-     border-radius: 40px;
-     position: absolute;
-     right: 130px;
-     top: 275px;
+.navbar .feuille2 {
+    transform: scaleX(-1); /* Retourne la feuille proprement */
 }
+
+.navbar .serv1, .navbar .proj1 {
+    font-size: 2rem; /* 32px */
+    font-weight: 500;
+}
+
+.navbar .bust1 {
+    height: 120px;
+    width: auto;
+}
+
+/* -- SECTION PRESENTATION (HERO) -- */
+.presepi {
+    margin-top: -80px; /* Fait remonter la section pour chevaucher la navbar */
+    padding: 2rem;
+}
+
+.presentation-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-secondary);
+    border-radius: 40px;
+    min-height: 700px;
+    padding: 2rem;
+    position: relative;
+}
+
+.image-section {
+    flex: 1; /* Prend 50% de la largeur */
+    position: relative;
+    height: 600px; /* Hauteur fixe pour le positionnement */
+}
+
+.feuillepres, .statuepres {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .feuillepres {
-     width: auto;
-     height: 1000px;
-     position: absolute;
-     top: 100px;
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    z-index: 1; /* Derrière la statue */
+    animation: spin 35s linear infinite; /* Animation de rotation */
 }
+
 .statuepres {
-     width: auto;
-     height: 700px;
-     position: absolute;
-     left: 200px;
-     top: 130px;
+    width: 80%;
+    height: auto;
+    max-width: 500px;
+    z-index: 2; /* Devant les feuilles */
 }
 
-.alignpres {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     position: absolute;
-     right: 150px;
-     top: 180px;
+.text-section {
+    flex: 1; /* Prend les 50% restants */
+    text-align: center;
+    z-index: 3;
+    padding: 1rem;
 }
-.textprescontainer {
-     display: flex;
-     flex-direction: column;
-}
+
 .titlepres {
-     font-size: 120px;
-     font-weight: 700;
-     color: #536056;
-     font-family: 'Inter', sans-serif;
-     text-align: center;
-     height: 10px;
+    font-size: 6rem; /* 96px */
+    font-weight: 700;
+    margin: 0;
 }
+
 .textpres {
-     font-size: 25px;
-     line-height: 1.4;
-     color: #536056;
-     font-family: 'Inter', sans-serif;
-     width: 700px;
-     height: 220px;
-     text-align: center;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.6;
+    max-width: 550px;
+    margin: 1.5rem auto; /* Centre le paragraphe */
 }
+
 .buttonprojets {
-     background-color: #F2F1EC;
-     color: #536056;
-     font-weight: 500;
-     padding: 25px 60px;
-     border-radius: 35px;
-     font-size: 30px;
-     font-family: 'Inter', sans-serif;
-     text-decoration: none;
-     margin-top: 30px;
+    background-color: var(--bg-main);
+    padding: 1rem 2.5rem;
+    border-radius: 35px;
+    font-size: 1.5rem; /* 24px */
+    font-weight: 500;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
 }
-/* * End of Presentation */
 
-/* * Stats */
+.buttonprojets:hover {
+    background-color: #e8e7e2;
+}
 
+
+/* -- KEYFRAMES POUR L'ANIMATION -- */
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* -- Texte "Des stats" et Flèche -- */
 .textstats {
-     margin-top: 900px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+.arrow-style {
+    display: block;
+    margin: 1rem auto 0;
+    width: 50px;
+    height: auto;
+}
+
+
+.stats, .footer {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+/* -- SECTION STATISTIQUES -- */
+.stats {
+    position: relative; /* Contexte pour le fond */
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.stats-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5; /* Rend le fond plus subtil */
+}
+
+.stats-background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* S'assure que l'image couvre tout l'espace */
+}
+
+.containerstats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.containerstats > div {
+    position: relative; /* Contexte pour le texte superposé */
+    width: 200px;
+    height: 200px;
+}
+
+.containerstats img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.containerstats p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--text-main);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* -- Section Citation -- */
+.quote-section {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem;
+    color: var(--bg-main);
+}
+
+.quote-section > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.textquote, .textquote2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.profile img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile p {
+    margin: 0;
+    text-align: left;
+}
+.nameprofile {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+.titleprofile {
+    font-size: 1rem;
+}
+
+
+/* -- FOOTER -- */
+.footer {
+    position: relative;
+    padding: 6rem 2rem;
+}
+
+.footer-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.footer-background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footercontainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footercontainer > div {
+    flex: 1;
+    max-width: 350px;
+}
+
+.footercontainer img {
+    width: auto;
+    height: 150px; /* Ajustez la taille du buste comme souhaité */
+}
+
+.infofooter, .rejoindrefooter {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footertextinfo, .footertextrej {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
