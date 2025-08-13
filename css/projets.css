@@ -1,0 +1,217 @@
+/* -- VARIABLES ET STYLES DE BASE -- */
+:root {
+    --bg-main: #F2F1EC;
+    --bg-secondary: #DADCD9;
+    --text-main: #4b574d;
+    --font-main: 'Inter', sans-serif;
+    --card-bg: #FFFFFF;
+    --shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+/* -- NAVBAR -- */
+.nav {
+    margin-bottom: 2rem;
+}
+
+.backgroundnavbar {
+    background-color: var(--bg-secondary);
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+    border-radius: 50px;
+    padding: 10px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar .feuille1, .navbar .feuille2 {
+    width: 40px;
+    height: auto;
+}
+
+.navbar .feuille2 {
+    transform: scaleX(-1);
+}
+
+.navbar .serv1, .navbar .proj1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.navbar .bust1 {
+    height: 120px;
+    width: auto;
+}
+
+
+/* -- MISE EN PAGE PRINCIPALE -- */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* -- SECTION "NOS PROJETS" -- */
+.nosprojets {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.nosprojets h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.nosprojets > p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 4rem auto;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    align-items: center;
+    text-align: left;
+}
+
+.project-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info h2 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.project-info p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.project-info a {
+    background-color: var(--text-main);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.project-info a:hover {
+    background-color: #333d36;
+}
+
+/* -- SECTION "MEET THE TEAM" -- */
+.meettheteam {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.meettheteam h1 {
+    font-size: 3.5rem;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.cardtemplate {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.cardtemplate img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.cardtemplate .member-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cardtemplate .member-role {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #888;
+    margin: 0.2rem 0 1rem 0;
+}
+
+.cardtemplate .member-bio {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* -- SECTION "NOUS REJOINDRE" -- */
+.join-us {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: var(--bg-secondary);
+    margin-top: 2rem;
+}
+
+.join-us p {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+}
+
+.join-us a {
+    background-color: var(--text-main);
+    color: white;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.join-us a:hover {
+    background-color: #333d36;
+}
