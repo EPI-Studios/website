@@ -1,197 +1,212 @@
 /* -- VARIABLES ET STYLES DE BASE -- */
 :root {
-     --bg-main: #F2F1EC;
-     --bg-secondary: rgb(217, 217, 217); 
-     --text-main: #4b574d;
-     --font-main: 'Inter', sans-serif;
+    --bg-main: #F2F1EC;
+    --bg-secondary: #DADCD9;
+    --text-main: #4b574d;
+    --font-main: 'Inter', sans-serif;
+    --border-color: #c5c5c5;
 }
 
 body {
-     margin: 0;
-     font-family: var(--font-main);
-     background-color: var(--bg-main);
-     color: var(--text-main);
-     overflow-x: hidden;
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
 }
 
 a {
-     text-decoration: none;
-     color: var(--text-main);
+    text-decoration: none;
+    color: var(--text-main);
 }
 
 .bold {
-     font-weight: bold;
-}
-
-.nextbutton {
-background-color: var(--bg-secondary);
-border: none;
-font-size: 3rem;
-color: var(--text-main);
-padding: 1rem 2rem;
-border-radius: 10px;
-cursor: pointer;
-display: block;
-margin: 2rem auto 0 auto;
-}
-
-
-/* Infos*/
-
-.title {
-     font-size: 6rem;
-     font-weight: bold;
-     text-align: center;
-     margin-top: 2rem;
-}
-.texttitle {
-     font-size: 2.5rem;
-     text-align: center;
-     margin: auto;
-     margin-top: 0px;
-     max-width: 1000px;
-}
-
-.preform {
-     display: block;
-     max-width: 800px;
-     text-align: center;
-     margin: 0 auto;
-}
-.preform p {
-     font-size: 3rem;
-     margin-top: 4rem;
-     margin-bottom: 1rem;
-     font-weight: bold;
-}
-.preform label {
-     font-size: 2rem;
-}
-
-/* * FAQ */
-
-.FAQ {
-     max-width: fit-content;
-     margin: 0 auto;
-     padding: 2rem;
-     border-radius: 10px;
-     text-align: center;
-}
-.FAQ h1 {
-     font-size: 3rem;
-     margin-bottom: 2rem;
-
-}
-.faqq {
-     font-size: 2rem;
-     background-color: var(--bg-secondary);
-     padding: 1rem;
-     border-radius: 10px;
-     font-weight: bold;
-}
-
-.questionsintro {
-     font-size: large;
-     font-size: 2rem;
-     margin-top: 2rem;
-     padding: 1rem;
+    font-weight: 700;
 }
 
 hr {
-     width: 60%;
+    border: none;
+    border-top: 2px solid var(--bg-secondary);
+    margin: 4rem auto;
+    width: 80%;
 }
-/* * Début formulaire */
 
+/* -- MISE EN PAGE PRINCIPALE -- */
+.page-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 
-.formpres label {
-     font-size: 2rem;
-     margin-bottom: 0.5rem;
-     text-align: center;
+/* -- NAVBAR (copiée de l'autre page pour la cohérence) -- */
+.nav { margin-bottom: 2rem; }
+.backgroundnavbar { background-color: var(--bg-secondary); max-width: 900px; margin: 0 auto; border-radius: 50px; padding: 10px; }
+.navbar { display: flex; justify-content: center; align-items: center; gap: 1.5rem; }
+.navbar .feuille1, .navbar .feuille2 { width: 40px; height: auto; }
+.navbar .feuille2 { transform: scaleX(-1); }
+.navbar .serv1, .navbar .proj1 { font-size: 1.5rem; font-weight: 500; }
+.navbar .bust1 { height: 120px; width: auto; }
+
+/* -- TITRES DE PAGE -- */
+.title {
+    font-size: 4.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.texttitle {
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+/* -- FORMULAIRES -- */
+form, .FAQ {
+    background-color: #fff;
+    padding: 2.5rem;
+    border-radius: 15px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label, form legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 input[type="text"],
 input[type="email"],
-input[type="number"] {
-     width: 52%;
-     padding: 0.5rem;
-     margin: 0px auto 1.5rem auto;
-     border: 1px solid;
-     border-radius: 10px;
-     font-size: 1.2rem;
-     background-color: var(--bg-secondary);
-     height: 35px;
-
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    background-color: #f8f9fa;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.littlequestion {
-     width: 100% !important;
+textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
-.form-group {
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-}
-.container1 {
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     justify-content: center;
-     margin: 2rem 2rem;
-     gap: 6rem;
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--text-main);
+    box-shadow: 0 0 0 3px rgba(75, 87, 77, 0.1);
 }
 
-
-
-
-/* ! forms recrutement */
-
-form {
-     display: block;
-     text-align: center;
-     margin: 0 auto;
-}
-form p {
-     font-size: 2rem;
-     margin-bottom: 0.5rem;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
-/* ! fin de formulaire */
+/* -- BOUTONS -- */
+.nextbutton, .finalsubmit {
+    background-color: var(--text-main);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 2rem auto 0 auto;
+    transition: background-color 0.2s;
+}
+
+.nextbutton:hover, .finalsubmit:hover {
+    background-color: #333d36;
+}
+
+/* -- PRÉ-FORMULAIRE (RADIOS) -- */
+.preform fieldset {
+    border: none;
+    padding: 0;
+}
+
+.preform legend {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.radio-group label {
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+
+/* -- FAQ -- */
+.FAQ h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.faqq {
+    font-size: 1.2rem;
+    background-color: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.questionsintro {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+}
+
+
+/* -- FORMULAIRE FINAL -- */
 .notation {
-     background-color: var(--bg-secondary);
-     padding: 0.5rem 2rem 2rem 2rem;
-     border-radius: 10px;
-     display: block;
-     margin: 3rem auto 0 auto;
-     max-width: 800px;
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
 }
 .notation p {
-     font-size: 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 .stars {
-     font-size: 4rem;
-     display: flex;
-     justify-content: center;
-     gap: 3rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
 }
-
-
 .questrem {
-     font-size: 3rem;
-     margin-top: 3rem;
-     margin-bottom: 1rem;
-     font-weight: bold;
-}
-
-
-.finalsubmit {
-     background-color: var(--bg-secondary);
-     border: 1px solid black;
-     font-size: 3rem;
-     color: var(--text-main);
-     padding: 1rem 2rem;
-     border-radius: 10px;
-     cursor: pointer;
-     display: block;
-     margin: 2rem auto 0 auto;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-weight: 600;
 }
