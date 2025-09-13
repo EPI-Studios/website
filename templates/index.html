@@ -8,8 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/hero.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <script src="../script/script.js" defer></script>
+    
 </head>
-<body>
+<body id="index">
 
     <header>
         <div class="iconcontainer">
@@ -31,7 +34,7 @@
     </header>
 
     <main>
-        <section class="presepi">
+        <section class="presepi" id="presepi">
             <div class="presentation-container">
                 <div class="image-section">
                     <img src="../Ressources/Feuilles-03.png" alt="" class="feuillepres">
@@ -45,43 +48,49 @@
                     <a href="projets.html" class="buttonprojets">Nos Projets</a>
                 </div>
             </div>
-             <p class="textstats">Des statistiques</p>
-            <img src="../Ressources/Arrow 1.png" class="arrow-style" alt="Flèche vers le bas">
+             
         </section>
 
-        <section class="stats">
-            <div class="stats-background-image">
-                 <img src="../Ressources/Fond_beige-05.jpg" alt="">
-            </div>
-            <div class="containerstats">
-                <div>
-                    <img src="../Ressources/projets-open-sources.png" alt="Icône projets open source">
-                    <p class="opensourcenumber">3</p>
+        <section class="textstats" id="textstats">
+            <p class="textstats">Des statistiques</p>
+            <img src="../Ressources/Arrow 1.png" class="arrow-style" alt="Flèche vers le bas">
+        </section>
+        
+        <section class="stats" id="stats">
+
+            <div>
+                <div class="stats-background-image">
+                    <img src="../Ressources/Fond_beige-05.jpg" alt="">
                 </div>
-                <div>
-                    <img src="../Ressources/Commandes-realisee.png" alt="Icône commandes réalisées">
-                    <p class="commandesnumber">2</p>
-                </div>
-                <div>
-                    <img src="../Ressources/membres.png" alt="Icône membres">
-                    <p class="membresnumber">9</p>
+                <div class="containerstats">
+                    <div>
+                        <img src="../Ressources/projets-open-sources.png" alt="Icône projets open source">
+                        <p class="opensourcenumber">3</p>
+                    </div>
+                    <div>
+                        <img src="../Ressources/Commandes-realisee.png" alt="Icône commandes réalisées">
+                        <p class="commandesnumber">2</p>
+                    </div>
+                    <div>
+                        <img src="../Ressources/membres.png" alt="Icône membres">
+                        <p class="membresnumber">9</p>
+                    </div>
                 </div>
             </div>
             
 
             <div class="quote-section">
                 <img src="../Ressources/quotebackground.png">
-                
                 <p class="textquote">"Un beau travail d'équipe! "</p>
                 <p class="textquote2">C'est ce que je préfère dans un projet comme celui la! </p>
             </div>
 
             <div class="profile">
                 <img src="../Ressources/pfp.png" alt="Photo de profil de Gaël" class="pfpprofile">
-                
                 <p class="nameprofile">Gaël</p>
                 <p class="titleprofile">Président de l'asso EPI STUDIO, développeur Web/desktop</p>
             </div>
+
         </section>
     </main>
 
