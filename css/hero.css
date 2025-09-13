@@ -13,7 +13,7 @@ body {
     color: var(--text-main);
     overflow-x: hidden;
 }
-
+ 
 a {
     text-decoration: none;
     color: var(--text-main);
@@ -33,7 +33,7 @@ a {
 }
 
 .nav {
-    margin-top: 1rem;
+    margin-bottom: 5rem;
     position: relative;
     z-index: 10;
 }
@@ -43,7 +43,7 @@ a {
     max-width: 900px;
     margin: 0 auto;
     border-radius: 50px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .navbar {
@@ -228,16 +228,20 @@ a {
 
 .containerstats p {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--text-main);
-    font-size: 1.5rem;
+    font-size: 6rem;
     font-weight: 600;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
-/* -- Section Citation -- */
+
+
+
+
+/* * -- Section Citation -- */
 .quote-section {
     position: relative;
     max-width: 900px;
@@ -248,10 +252,10 @@ a {
 
 .quote-section > img {
     position: absolute;
-    top: 0;
+    top: -50px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 200%;
     z-index: -1;
 }
 
@@ -261,16 +265,25 @@ a {
     max-width: 80%;
     margin: 0 auto;
 }
+.textquote {
+    font-weight: 700;
+}
+
 
 .profile {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 170%);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
-.profile img {
+
+.pfpprofile {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -280,6 +293,7 @@ a {
 .profile p {
     margin: 0;
     text-align: left;
+    color: var(--bg-main);
 }
 .nameprofile {
     font-weight: 700;
@@ -288,6 +302,7 @@ a {
 .titleprofile {
     font-size: 1rem;
 }
+
 
 
 /* -- FOOTER -- */
