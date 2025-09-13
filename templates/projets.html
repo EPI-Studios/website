@@ -1,80 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>EPI | Projets</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPI | Projets</title>
+    <!-- Assurez-vous que les chemins sont corrects -->
+    <link rel="stylesheet" href="../css/navbar.css"> <!-- Fichier CSS pour la navbar -->
+    <link rel="stylesheet" href="../css/projets.css"> <!-- Fichier CSS pour cette page -->
 </head>
 <body>
-     <section class="nav">
-     
-          <div class="backgroundnavbar"></div>
-     
-          <div class="navbar">
-     
-               <img src="../Ressources/feuillehotbar.png" class="feuille1">
-               <a href="../templates/services.html" class="serv1">S e r v i c e s</a>
-     
-               <img src="../Ressources/Buste-03.png" class="bust1">
-     
-               <a href="../templates/projets.html" class="proj1">P r o j e t s</a>
-     
-               <img src="../Ressources/feuillehotbar.png" class="feuille2">
-          </div>
-          <br>
-     
-     </section>
 
-     <section class="nosprojets">
-          <h1>Nos Projets</h1>
-          <p>
-               Depuis le lancement d'EPI Studio en avril 2025,
-               nous avons créé plusieurs projets, que ce soit des projets
-               Minecraft, Web, ou même d'applications de bureau !
-               Vous pouvez nous rejoindre directement sur Github, 
-               ils sont disponibles gratuitement !
-          </p>
+    <header>
+        <nav class="nav">
+            <div class="backgroundnavbar">
+                <div class="navbar">
+                    <img src="../Ressources/feuillehotbar.png" alt="" class="feuille1">
+                    <a href="../templates/services.html" class="serv1">Services</a>
+                    <img src="../Ressources/Buste-03.png" alt="" class="bust1">
+                    <a href="../templates/projets.html" class="proj1">Projets</a>
+                    <img src="../Ressources/feuillehotbar.png" alt="" class="feuille2">
+                </div>
+            </div>
+        </nav>
+    </header>
 
-          <img src="../Ressources/creativeutil.png">
-          <p>
-               Creative Util
-          </p>
-          <p>
-               Un datapack qui propose divers outils créatifs en tant
-               que GUI tels que le contrôle de la météo, d'enchanements,
-               de gamerules et la création de nourriture personalisée.
-          </p>
+    <main class="page-container">
 
-          <a href="https://github.com/EPI-Studios/creative-util">Télécharger</a>
+        <section class="nosprojets">
+            <h1>Nos Projets</h1>
+            <p>
+                Depuis le lancement d'EPI Studio, nous avons créé plusieurs projets, que ce soit des projets Minecraft, Web, ou même d'applications de bureau ! Vous pouvez nous rejoindre directement sur Github, ils sont disponibles gratuitement !
+            </p>
 
-          <p>
-               MeekUp
-          </p>
-          <p>
-               Un site d'upload de fichiers fait avec un backend en 
-               flash.
-          </p>
-          <a href="https://github.com/EPI-Studios/Meekup">Télécharger</a>
-     </section>
+            <div class="project-list">
+                <!-- Projet 1: Creative Util -->
+                <div class="project-card">
+                    <img src="../Ressources/creativeutil.png" alt="Logo de Creative Util">
+                    <div class="project-info">
+                        <h2>Creative Util</h2>
+                        <p>
+                            Un datapack qui propose divers outils créatifs en tant que GUI tels que le contrôle de la météo, d'enchantements, de gamerules et la création de nourriture personnalisée.
+                        </p>
+                        <a href="https://github.com/EPI-Studios/creative-util" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                    </div>
+                </div>
 
-     <section class="meettheteam">
-          <h1>Meet the Team !</h1>
+                <!-- Projet 2: MeekUp -->
+                <div class="project-card">
+                    <!-- Vous n'avez pas d'image pour MeekUp, j'utilise un placeholder -->
+                    <img src="https://placehold.co/200x200/dadcd9/536056?text=MeekUp" alt="Logo de MeekUp">
+                    <div class="project-info">
+                        <h2>MeekUp</h2>
+                        <p>
+                            Un site d'upload de fichiers fait avec un backend en Flask.
+                        </p>
+                        <a href="https://github.com/EPI-Studios/Meekup" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-          <div class="cardtemplate">
-               <img src="../Ressources/pfp.png">
-               <p>Gaël.T</p>
-               <p>Fondateur d'EPI Studio</p>
-               <p>
-                    Apprentis Développeur JS,
-                    je dirige ce projet qui me tiens
-                    tant à coeur avec cette 
-                    merveilleuse équipe ! 
-               </p>
-          </div>
-          <!--! Add 7 more team members -->
-     </section>
+        <section class="meettheteam">
+            <h1>Meet the Team !</h1>
+            <div class="team-grid">
+                <!-- Membre 1: Gaël -->
+                <div class="cardtemplate">
+                    <img src="../Ressources/pfp.png" alt="Photo de Gaël">
+                    <p class="member-name">Gaël.T</p>
+                    <p class="member-role">Fondateur d'EPI Studio</p>
+                    <p class="member-bio">
+                        Apprenti Développeur JS, je dirige ce projet qui me tient tant à cœur avec cette merveilleuse équipe !
+                    </p>
+                </div>
+                
+                <!-- Ajoutez les 7 autres membres ici en copiant le modèle de carte -->
+                <!-- Exemple de carte pour un autre membre -->
+                <div class="cardtemplate">
+                    <img src="https://placehold.co/120x120/dadcd9/536056?text=Membre" alt="Photo d'un membre de l'équipe">
+                    <p class="member-name">Nom du Membre</p>
+                    <p class="member-role">Rôle du Membre</p>
+                    <p class="member-bio">
+                        Une courte description du membre de l'équipe et de sa contribution au projet.
+                    </p>
+                </div>
+                 <!-- Répétez pour les autres membres -->
 
-     <p>Tu souhaites faire partie du studio ?</p>
-     <a href="../templates/recrutements.html">Nous Rejoindre</a>
+            </div>
+        </section>
+
+        <section class="join-us">
+            <p>Tu souhaites faire partie du studio ?</p>
+            <a href="../templates/recrutements.html">Nous Rejoindre</a>
+        </section>
+
+    </main>
+
 </body>
 </html>

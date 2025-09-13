@@ -8,17 +8,20 @@ Ce projet vise à créer le site web officiel d'EPI-Studios. Il servira de vitri
 
 - [@FlyingCow32](https://github.com/FlyingCow31) > Design figma/développement 
 - Ilan (@ilandube) > Design graphique des pages
+- [@Ichinose102](https://github.com/Ichinose102) > Code et refactorisation du code
 
 
 ## 📝 TODO
 
-- [ ]  Créer les fichiers HTML et les styliser comme sur le design figma. 
+- [x]  Créer les fichiers HTML et les styliser comme sur le design figma. 
 - [ ]  Rendre le site réactif
-- [ ]  Animer les feuilles autour de la statue (index.html) pour qu'elles fassent un cercle quand la page se lance, ou quelque chose comme ça 
+- [x]  Animer les feuilles autour de la statue (index.html) pour qu'elles fassent un cercle quand la page se lance, ou quelque chose comme ça 
 - [ ]  Trouver un Host pour le site qui accepte Node.JS 
 - [ ]  Backend en Node.JS 
 - [ ]  Rajouter une page avis (dans le futur) ou l'incorporer à la page de nos services 
 - [ ]  Strong les keywords dans la présentation index.html
+- [ ]  Modifier l'animation des feuilles d'index.html pour qu'elles tourne vite au début et qu'ensuite elles ralentissent
+- [ ]  Coder les formulaires en backend
 ## 🖍 Couleurs utilisées
 
 | Color             | Hex                                                                |
