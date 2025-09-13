@@ -194,6 +194,7 @@ a {
     padding: 4rem 0;
     background-color: var(--bg-secondary);
     margin-top: 2rem;
+    border-radius: 15px;
 }
 
 .join-us p {

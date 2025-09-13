@@ -39,12 +39,12 @@ hr {
 }
 
 /* -- NAVBAR (copiée de l'autre page pour la cohérence) -- */
-.nav { margin-bottom: 2rem; }
-.backgroundnavbar { background-color: var(--bg-secondary); max-width: 900px; margin: 0 auto; border-radius: 50px; padding: 10px; }
+.nav { margin-top: 2rem; margin-bottom: 2rem; }
+.backgroundnavbar { background-color: var(--bg-secondary); max-width: 900px; margin: 0 auto; border-radius: 50px; padding: 5px; }
 .navbar { display: flex; justify-content: center; align-items: center; gap: 1.5rem; }
 .navbar .feuille1, .navbar .feuille2 { width: 40px; height: auto; }
 .navbar .feuille2 { transform: scaleX(-1); }
-.navbar .serv1, .navbar .proj1 { font-size: 1.5rem; font-weight: 500; }
+.navbar .serv1, .navbar .proj1 { font-size: 2rem; font-weight: 700; }
 .navbar .bust1 { height: 120px; width: auto; }
 
 /* -- TITRES DE PAGE -- */
@@ -70,13 +70,15 @@ form, .FAQ {
     border-radius: 15px;
     margin-top: 3rem;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 70%;
+    margin: 3rem auto;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
-    text-align: left;
+    text-align: center;
 }
 
 .form-group label, form legend {
@@ -89,7 +91,7 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 textarea {
-    width: 100%;
+    width: 97%;
     padding: 0.8rem 1rem;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -115,6 +117,12 @@ input:focus, textarea:focus {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
 }
+
+form p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
 
 /* -- BOUTONS -- */
 .nextbutton, .finalsubmit {
@@ -143,7 +151,7 @@ input:focus, textarea:focus {
 
 .preform legend {
     font-size: 1.5rem;
-    text-align: center;
+    text-align: left;
     width: 100%;
     margin-bottom: 1.5rem;
 }
