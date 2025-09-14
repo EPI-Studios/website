@@ -1,0 +1,54 @@
+/* -- FOOTER -- */
+.footer {
+     position: relative;
+     padding: 6rem 2rem;
+}
+
+.footer-background-image {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: -1;
+     opacity: 0.6;
+}
+
+.footer-background-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+}
+
+.footercontainer {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     max-width: 1200px;
+     margin: 0 auto;
+     text-align: center;
+}
+
+.footercontainer>div {
+     flex: 1;
+     max-width: 350px;
+}
+
+.footercontainer img {
+     width: auto;
+     height: 150px;
+     /* Ajustez la taille du buste comme souhaité */
+}
+
+.infofooter,
+.rejoindrefooter {
+     font-size: 2.5rem;
+     font-weight: 600;
+     margin-bottom: 1rem;
+}
+
+.footertextinfo,
+.footertextrej {
+     font-size: 1.1rem;
+     line-height: 1.6;
+}

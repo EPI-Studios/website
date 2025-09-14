@@ -6,6 +6,9 @@
     <title>Nos Services</title>
     <link rel="stylesheet" href="../css/services.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <script src="../script/services.js" defer></script>
 </head>
 <body>
 
@@ -16,6 +19,7 @@
             <a href="../templates/index.html"><img src="../Ressources/Buste-03.png" alt="Logo de l'association" class="bust-center"></a>
             <a href="../templates/projets.html" class="nav-link">Projets</a>
             <img src="../Ressources/feuillehotbar.png" alt="Feuille de décoration" class="feuille-right">
+            
         </div>
     </nav>
     
@@ -119,15 +123,51 @@
             <h2>Et bien plus...</h2>
             <p>Projets annexes</p>
             <p>Graphisme et Illustrations</p>
+            <button class="commander-btn">Commander</button>
         </section>
         
         <section class="faq-section">
             <h2>F.A.Q</h2>
-            <div class="faq-item">Comment est utilisé l'argent ?</div>
-            <div class="faq-item">Quelles sont mes protections ?</div>
-            <div class="faq-item">Comment se passe la commande ?</div>
+            <div class="faq-item" id="box1">Comment est utilisé l'argent ?
+                <div class="faq-answer" id="answer">
+                </div>
+            </div>
+            
+            <div class="faq-item" id="box2">Quelles sont mes protections ?</div>
+            <div class="faq-item" id="box3">Comment se passe la commande ?</div>
         </section>
 
     </main>
+
+    <footer>
+        <section class="footer">
+            <div class="footer-background-image">
+                <img src="../Ressources/footerimage.jpg" alt="">
+            </div>
+            <div class="footercontainer">
+                <div>
+                    <p class="infofooter">Informations</p>
+                    <p class="footertextinfo">
+                        Association Loi 1901 crée le 24/08/25. <br>
+                        RNA : W313041050 <br>
+                        SIRET : xxx <br>
+                        Contact pour réclamation: contact@epistudios.fr <br>
+                        Statuts disponibles sur demande.
+                    </p>
+                </div>
+                <a href="../templates/index.html"><img src="../Ressources/Buste-03.png" alt="Buste logo"
+                        class="bustelogo"></a>
+                <div>
+                    <p class="rejoindrefooter">Nous Rejoindre</p>
+                    <p class="footertextrej">
+                        Vous souhaitez faire partie de l'aventure ? <br>
+                        Nous recherchons des développeurs, graphistes et CM ! <br>
+                        Pour plus d'informations et pour commencer les recrutements, <br>
+                        Rendez-vous sur <a href="../templates/recrutements.html">cette page de recrutements</a>!
+                    </p>
+                </div>
+            </div>
+        </section>
+    </footer>
 </body>
 </html>

@@ -45,3 +45,4 @@ function typeAnimation() {
 }
 
 typeAnimation();
+// * End of animations
