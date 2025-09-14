@@ -1,4 +1,12 @@
 /* -- FOOTER -- */
+:root {
+     --bg-main: #F2F1EC;
+     --bg-secondary: #DADCD9;
+     --text-main: #536056;
+     --font-main: 'Inter', sans-serif;
+     --text-hover: #3f4841;
+}
+
 .footer {
      position: relative;
      padding: 6rem 2rem;
@@ -51,4 +59,13 @@
 .footertextrej {
      font-size: 1.1rem;
      line-height: 1.6;
+}
+
+footer a {
+     text-decoration: none;
+     color: var(--text-main);
+}
+footer a:hover {
+     text-decoration: underline;
+     color: var(--text-hover);
 }
