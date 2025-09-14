@@ -34,7 +34,7 @@
 }
 
 
-.bust1:hover, .feuille1:hover {
+.bust1:hover, .feuille1:hover,.bustelogo:hover {
      animation: transform 1s linear;
      animation: spin2 1s linear;
 }

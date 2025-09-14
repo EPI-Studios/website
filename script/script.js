@@ -29,3 +29,19 @@ checkIfVisible();
 
 
 // * Animation for the main text in index.html: 
+const string = "EPI STUDIO";
+
+let array = string.split("")
+let timer; 
+
+function typeAnimation() {
+     if (array.length > 0) {
+          document.getElementById('titlepres').innerHTML += array.shift();
+     }
+     else {
+          clearTimeout(timer);
+     }
+     timer = setTimeout('typeAnimation()' ,100);
+}
+
+typeAnimation();
