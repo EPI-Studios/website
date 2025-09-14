@@ -40,7 +40,7 @@ hr {
 
 /* -- NAVBAR (copiée de l'autre page pour la cohérence) -- */
 .nav { margin-top: 2rem; margin-bottom: 2rem; }
-.backgroundnavbar { background-color: var(--bg-secondary); max-width: 900px; margin: 0 auto; border-radius: 50px; padding: 5px; }
+.backgroundnavbar { background-color: var(--bg-secondary); max-width: 900px; margin: 0 auto; border-radius: 50px; padding: 2px; }
 .navbar { display: flex; justify-content: center; align-items: center; gap: 1.5rem; }
 .navbar .feuille1, .navbar .feuille2 { width: 40px; height: auto; }
 .navbar .feuille2 { transform: scaleX(-1); }

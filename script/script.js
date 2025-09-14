@@ -26,3 +26,6 @@ function checkIfVisible() {
 
 window.addEventListener('scroll', checkIfVisible);
 checkIfVisible();
+
+
+// * Animation for the main text in index.html: 
