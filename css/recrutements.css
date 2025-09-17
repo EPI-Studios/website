@@ -125,7 +125,7 @@ form p {
 
 
 /* -- BOUTONS -- */
-.nextbutton, .finalsubmit {
+.nextbutton, .finalsubmit, .editbutton {
     background-color: var(--text-main);
     color: white;
     font-size: 1.2rem;

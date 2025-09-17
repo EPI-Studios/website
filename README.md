@@ -23,6 +23,7 @@ Ce projet vise à créer le site web officiel d'EPI-Studios. Il servira de vitri
 - [ ]  Strong les keywords dans la présentation index.html
 - [ ]  Modifier l'animation des feuilles d'index.html pour qu'elles tourne vite au début et qu'ensuite elles ralentissent
 - [ ]  Coder les formulaires en backend
+- [ ] 
 ## 🖍 Couleurs utilisées
 
 | Color             | Hex                                                                |

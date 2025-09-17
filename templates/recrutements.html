@@ -7,9 +7,10 @@
      <link rel="stylesheet" href="../css/recrutements.css">
      <link rel="stylesheet" href="../css/footer.css">
      <link rel="stylesheet" href="../css/animations.css">
+     <script src="../script/form.js" defer></script>
 
-     <!--!!!! Refactor the code to make it better and simpler for the form handler-->
-     <!--! TODO Refactor the code in the FAQ so I can Hadle it better-->
+
+
      <!--TODO Put effects on the form's text input (background, etc.)-->
 </head>
 <body>
@@ -29,10 +30,6 @@
 
      <p class="title">Recrutements</p>
 
-     <!-- ! Ici, je fais le form pour les dév, en fonction de la réponse
-     ! à la question 1, j'afficherai différentes questions avec JS du style if(graphiste){form 2}
-     !-->
-
      <p class="texttitle">
           Vous avez envie de vous investir dans un projet associatif durable qui 
           vous apportera des compétences, du savoir-faire en équipe, et
@@ -44,16 +41,19 @@
      <form id="preform" class="preform">
           <p>Pour quel poste candidatez-vous ?</p>
           
-          <input type="radio" name="poste" id="dev" value="dev">
-          <label for="dev">Développeur</label>
-          <br>
+          <div class="radio-option" id="radio-option">
+               <input type="radio" name="poste" id="dev" value="dev">
+               <label for="dev">Développeur</label>
+          </div>
 
-          <input type="radio" name="poste" id="graphiste" value="graphiste">
-          <label for="graphiste">Graphiste</label>
-          <br>
-          <input type="radio" name="poste" id="cm" value="cm">
-          <label for="cm">Community Manager (CM)</label>
-          <br>
+          <div class="radio-option" id="radio-option">
+               <input type="radio" name="poste" id="gfx" value="gfx">
+               <label for="gfx">Graphiste</label>
+          </div>
+          <div class="radio-option" id="radio-option">
+               <input type="radio" name="poste" id="cm" value="cm">
+               <label for="cm">Community Manager (CM)</label>
+          </div>
      </form>
 
 
@@ -75,14 +75,12 @@
                Pas de panique, vous pourrez les poster à la fin
                de votre candidature.
           </p>
-
-          <button class="nextbutton">Suivant</button>
      </section>
      
      <hr>
 
      <!-- ! Form présentation pour tous les rôles-->
-     <form id="formpres" class="formpres">
+     <form class="first-question">
           
           <div class="container1">
                <div class="form-group">
@@ -124,13 +122,12 @@
                <input type="file" name="cv" accept=".pdf" required>
                <!--TODO: Changer l'icone d'upload par une icône un peu mieux-->
           </div>
-          <button class="nextbutton">Suivant</button>
 
      </form>
 
 
      <!-- ! Form développement -->
-     <form id="formdev" class="formdev" tag="hidden">
+     <form class="conditional-question" id="devform">
 
           <p class="title">Experience</p>
 
@@ -177,7 +174,7 @@
 
 
      <!-- ! Form graphiste -->
-     <form id="formgraph" tag="hidden">
+     <form class="conditional-question" id="gfxform">
 
           <p class="title">Experience</p>
 
@@ -219,7 +216,7 @@
      </form>
 
      <!-- ! Form community manager -->
-     <form id="formcm" tag="hidden">
+     <form class="conditional-question" id="cmform">
           <p class="title">Experience</p>
 
           <p class="texttitle">
@@ -261,7 +258,10 @@
      </form>
 
      <form id="formfinished">
-          <p class="title">Votre candidature est terminée !</p>
+          <p class="title">Votre candidature est terminée!</p>
+
+          <button class="editbutton">Modifier ma candidature</button>
+          <br>
 
           <p class="texttitle">
                <span class="bold"> N'oubliez pas d'enregistrer votre candidature</span> avec le bouton

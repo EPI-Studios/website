@@ -54,3 +54,11 @@
      transform: scale(1.05);
      transition: transform 0.5s linear;
 }
+
+/* Animations of recrutement*/
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="number"]:hover,
+textarea {
+     background-color: #ebeced;
+}
