@@ -55,10 +55,23 @@
      transition: transform 0.5s linear;
 }
 
+/* Animation Index.html partenaires*/
+.partners img:hover {
+     transform: scale(1.1);
+     transition: transform 0.2s linear;
+}
+
 /* Animations of recrutement*/
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="number"]:hover,
 textarea {
      background-color: #ebeced;
+}
+
+
+/* * Animations de projet.html*/
+.cardtemplate:hover, .project-card:hover {
+     transform: scale(1.1);
+     transition: transform 0.5s linear;
 }

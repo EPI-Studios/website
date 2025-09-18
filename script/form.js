@@ -236,3 +236,4 @@ endingQuestion.style.display = 'none';
 
 
 // ! TODO: INSERT HERE BACKEND SEND FORM
+ // TODO Fix bug where you can send the data even with required questions blank

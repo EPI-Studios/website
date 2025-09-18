@@ -1,0 +1,24 @@
+.cat {
+     text-align: center;
+     height: 100rem;
+     width: auto;
+}
+
+body {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+p {
+     font-size: 10rem;
+}
+button {
+     font-size: 10rem;
+     background-color: #5cb85c;
+          color: #fff;
+          border: 1px solid #4cae4c;
+          padding: 10px 20px;
+          border-radius: 50px;
+          cursor: pointer;
+          max-width: 100%;
+}

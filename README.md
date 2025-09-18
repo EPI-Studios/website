@@ -14,18 +14,20 @@ Ce projet vise à créer le site web officiel d'EPI-Studios. Il servira de vitri
 ## 📝 TODO
 
 - [x]  Créer les fichiers HTML et les styliser comme sur le design figma. 
-- [ ]  Rendre le site réactif
-- [ ] Finir les animations dans projets.html
+- [x]  Rendre le site réactif
+- [x]  Finir les animations dans projets.html
 - [x]  Animer les feuilles autour de la statue (index.html) pour qu'elles fassent un cercle quand la page se lance, ou quelque chose comme ça 
-- [ ]  Trouver un Host pour le site qui accepte Node.JS 
+- [x]  Trouver un Host pour le site qui accepte Node.JS 
 - [ ]  Backend en Node.JS 
 - [ ]  Rajouter une page avis (dans le futur) ou l'incorporer à la page de nos services 
-- [ ]  Strong les keywords dans la présentation index.html
-- [ ]  Modifier l'animation des feuilles d'index.html pour qu'elles tourne vite au début et qu'ensuite elles ralentissent
+- [x]  Strong les keywords dans la présentation index.html
+- [x]  Modifier l'animation des feuilles d'index.html pour qu'elles tourne vite au début et qu'ensuite elles ralentissent
 - [ ]  Coder les formulaires en backend
 - [ ]  Remplacer le button d'upload dans recrutement.html par un boutons stylisé (icone)
 - [ ]  Faire des boutons radio dans recrutement.html plus jolis
-- [ ] Faire en sorte qu'on puisse noter avec les étoiles dans la derniere partie du recrutements
+- [ ]  Faire en sorte qu'on puisse noter avec les étoiles dans la derniere partie du recrutements
+- [ ]  Remplacer le button d'upload dans services.html par un bouton stylisé (icon)
+- [ ]  bug dans les forms ou le form s'envoie meme si les questions required sont vides. 
 
 
 ## 🖍 Couleurs utilisées

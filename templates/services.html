@@ -24,18 +24,18 @@
     </nav>
     
     <header>
-        <div class="header-content">
+        <div class="header-content" id="tohide">
             <h1>Nos Services</h1>
             <p>Nous mettons nos talents à votre disposition, nous vous proposons une gamme complète de services pour concrétiser vos projets de A à Z. Nos compétences s’étendent de la conception de sites web à la gestion de serveurs de jeu personnalisés, en passant par le graphisme. Nous nous adaptons à vos besoins et nous engageons à offrir une expérience de haute qualité, pour une satisfaction garantie.</p>
         </div>
     </header>
 
     <main>
-        <section class="service-category">
+        <section class="service-category" id="tohide">
             <div class="category-heading">
                 <h2>Sites Web</h2>
                 <div class="service-description">
-                    <p>Nous n’affichons aucun prix, nous réalisons un devis sur-mesure pour chacun de nos clients.</p>
+                    <p>Nous n'affichons aucun prix, nous réalisons un devis sur-mesure pour chacun de nos clients.</p>
                     <p>Chaque commande est basée sur un cahier des charges détaillé afin que la production et le résultat soient particulièrement personnalisés.</p>
                 </div>
             </div>
@@ -57,7 +57,7 @@
             </div>
         </section>
 
-        <section class="service-category">
+        <section class="service-category" id="tohide">
             <h2 class="title-with-desc">Discord</h2>
             <p class="category-description">L'association EPI-Studio n'est pas affiliée à Discord.</p>
             <div class="cards-container">
@@ -81,7 +81,7 @@
             </div>
         </section>
 
-        <section class="service-category">
+        <section class="service-category" id="tohide">
             <h2>Minecraft</h2>
             <p class="category-description">L'association EPI-Studio n'est pas affiliée à Mojang</p>
             <div class="cards-container">
@@ -119,13 +119,71 @@
             </div>
         </section>
 
-        <section class="more-services">
+        <section class="more-services" id="tohide">
             <h2>Et bien plus...</h2>
             <p>Projets annexes</p>
             <p>Graphisme et Illustrations</p>
             <button class="commander-btn">Commander</button>
         </section>
         
+        <section class="cmdform" id="cmdForm">
+            
+        <form>
+            <h1>Commander</h1>
+            
+            <p>
+                Cette page nous sert à en savoir plus sur
+                votre projet ! <br> Elle ne vous engage en rien,
+                vous recevrez un devis fait sur-mesure
+                par nos développeurs, qui vous inviterons
+                ensuite à discuter des détails techniques !
+                <br>
+                <br>
+                Le paiement se fera en deux fois, seulement
+                après avoir confirmé que nous
+                sommes en capacité de
+                répondre à toutes vos attentes et que vous
+                êtes sûr de vouloir soutenir notre
+                association avec votre paiement !<br>
+            </p>
+
+            <div>
+                <label for="pseudo" name="pseudo">Pseudo</label>
+                <input type="text" name="pseudo" id="formito">
+            </div>
+            <div>
+                <label for="discord" name="discord">@ Discord (si applicable)</label>
+                <input type="text" name="discord" id="formito">
+            </div>
+            <div>
+                <label for="email" name="email">Email</label>
+                <input type="email" name="email" required id="formito">
+            </div>
+
+            <div>
+                <label for="devis" name="devis">Pour quel service désirez-vous un devis?</label>
+                <textarea name="devis" required id="formito"></textarea>
+            </div>
+
+            <div>
+                <label for="details" name="details">Décrivez un maximum votre projet</label>
+                <textarea name="details" placeholder="Cahier des charges, description, idées..." id="formito"></textarea>
+            </div>
+
+            <div>
+                <label for="cdc" name="cdc">... Ou téléchargez votre cahier des charges (.pdf)</label>
+                <input type="file" name="cdc" accept=".pdf" id="formito">
+            </div>
+
+            <div>
+                <label for="budget" name="budget">Votre budget</label>
+                <input type="text" name="budget" placeholder="Indiquez votre budget" id="formito">
+            </div>
+
+            <button type="submit" id="submitBtn" id="formito">Envoyer</button>
+        </form>
+        </section>
+
         <section class="faq-section">
             <h2>F.A.Q</h2>
             <div class="faq-item" id="box1">Comment est utilisé l'argent ?
@@ -140,7 +198,17 @@
             <div class="faq-item" id="box3">Comment se passe la commande ? <div id="answer3"></div></div>
         </section>
 
+        <!-- * CMD when button clicked-->
+        
+        <section class="confirmcmd" id="confirmcmd">
+            <h1>Merci de votre commande!</h1>
+            <img src="../Ressources/check.png" alt="Check Tick">
+            <p>Nous reviendrons très vite vers vous, par le moyen de contact renseigné!</p>
+
+            <a href="../templates/index.html"><button class="backtoindex" id="backToIndex">Retour Accueil</button></a>
+        </section>
     </main>
+
 
     <footer>
         <section class="footer">

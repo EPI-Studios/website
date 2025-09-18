@@ -18,7 +18,9 @@ a {
     text-decoration: none;
     color: var(--text-main);
 }
-
+.strong {
+    font-weight: 700;
+}
 /* -- HEADER & NAVIGATION -- */
 .iconcontainer {
     display: flex;
@@ -106,7 +108,7 @@ a {
     height: auto;
     max-width: 800px;
     z-index: 1; /* Derrière la statue */
-    animation: spin 35s linear infinite; /* Animation de rotation */
+    animation: quickSpin 0.5s linear, spin 35s linear 0.5s infinite; /* Animation de rotation */
 }
 
 .statuepres {
@@ -155,6 +157,15 @@ a {
 
 
 /* -- KEYFRAMES POUR L'ANIMATION -- */
+@keyframes quickSpin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 @keyframes spin {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -357,4 +368,8 @@ a {
 .footertextinfo, .footertextrej {
     font-size: 1.1rem;
     line-height: 1.6;
+}
+
+.partners {
+    text-align: center;
 }

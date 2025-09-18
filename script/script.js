@@ -2,8 +2,9 @@ const index = document.getElementById('index');
 const presepi = document.getElementById('presepi');
 const stats = document.getElementById('stats');
 const textstats = document.getElementById('textstats');
+const partners = document.getElementById('partners');
 
-const elementsToShow = [presepi, stats, textstats];
+const elementsToShow = [presepi, stats, textstats, partners];
 
 elementsToShow.forEach(element => {
      element.style.opacity = '0';
@@ -41,7 +42,7 @@ function typeAnimation() {
      else {
           clearTimeout(timer);
      }
-     timer = setTimeout('typeAnimation()' ,100);
+     timer = setTimeout('typeAnimation()' ,120);
 }
 
 typeAnimation();

@@ -81,3 +81,52 @@ document.addEventListener('click', function(event) {
           answer3.innerText = '';
      }
 });
+
+
+// * Form de commande 
+const form = document.querySelector('#cmdForm');
+const cmdbutton = document.querySelectorAll('.commander-btn');
+const toHide = document.querySelectorAll('#tohide');
+
+form.style.display = 'none';
+
+cmdbutton.forEach(btn => {
+     btn.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          toHide.forEach(hide => {
+               hide.style.display = 'none'
+          });
+
+          form.style.display = 'block';
+          setTimeout(() => {
+               form.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+               });
+          }, 200);
+     });
+});
+
+
+const submitBtn = document.getElementById('submitBtn');
+const confirmcmd = document.getElementById('confirmcmd');
+const forminputs = document.querySelectorAll('#formito')
+
+submitBtn.addEventListener('click', function(event) {
+     event.preventDefault();
+
+     // TODO Insert here backend to send the form
+     // TODO Fix bug where you can send the data even with required questions blank
+
+     confirmcmd.classList.add('confirmcmd-visible');
+     confirmcmd.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+     });
+     form.style.opacity = '0.5';
+     
+     forminputs.forEach(input => {
+          input.disabled = true;
+     })
+});
