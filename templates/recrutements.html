@@ -38,17 +38,28 @@
           <p>Pour quel poste candidatez-vous ?</p>
           
           <div class="radio-option" id="radio-option">
-               <input type="radio" name="poste" id="dev" value="dev">
-               <label for="dev">Développeur</label>
+               <label for="dev">
+                    <input type="radio" name="poste" id="dev" value="dev">
+                    <div class="radio-button"></div>
+                    Développeur
+               </label>      
           </div>
 
           <div class="radio-option" id="radio-option">
-               <input type="radio" name="poste" id="gfx" value="gfx">
-               <label for="gfx">Graphiste</label>
+               
+               <label for="gfx">
+                    <input type="radio" name="poste" id="gfx" value="gfx">
+                    <div class="radio-button"></div>
+                    Graphiste
+               </label>
           </div>
           <div class="radio-option" id="radio-option">
-               <input type="radio" name="poste" id="cm" value="cm">
-               <label for="cm">Community Manager (CM)</label>
+               
+               <label for="cm">
+                    <input type="radio" name="poste" id="cm" value="cm">
+                    <div class="radio-button"></div>
+                    Community Manager (CM)
+               </label>
           </div>
      </form>
 
@@ -132,8 +143,6 @@
                     Pas besoin de lettre de motivation ! (pdf uniquement)</p>
                <input type="file" name="cv" id="hiddenCv" accept=".pdf" required class="hiddenCv">
                <img src="../Ressources/upload.png" alt="Upload Button" class="upload-img" onclick="document.getElementById('hiddenCv').click()">
-               
-               
           </div>
 
      </form>
