@@ -28,7 +28,7 @@ Ce projet vise à créer le site web officiel d'EPI-Studios. Il servira de vitri
 - [ ]  Faire en sorte qu'on puisse noter avec les étoiles dans la derniere partie du recrutements
 - [x]  Remplacer le button d'upload dans services.html par un bouton stylisé (icon)
 - [x]  bug dans les forms ou le form s'envoie meme si les questions required sont vides. 
-
+- [ ]  Modifier le guide gratuit dans services.html pour que le client comprenne que c'est gratuit si il achète un serveur tout fait
 
 ## 🖍 Couleurs utilisées
 
