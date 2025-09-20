@@ -23,11 +23,11 @@ Ce projet vise à créer le site web officiel d'EPI-Studios. Il servira de vitri
 - [x]  Strong les keywords dans la présentation index.html
 - [x]  Modifier l'animation des feuilles d'index.html pour qu'elles tourne vite au début et qu'ensuite elles ralentissent
 - [ ]  Coder les formulaires en backend
-- [ ]  Remplacer le button d'upload dans recrutement.html par un boutons stylisé (icone)
+- [x]  Remplacer le button d'upload dans recrutement.html par un boutons stylisé (icone)
 - [ ]  Faire des boutons radio dans recrutement.html plus jolis
 - [ ]  Faire en sorte qu'on puisse noter avec les étoiles dans la derniere partie du recrutements
 - [ ]  Remplacer le button d'upload dans services.html par un bouton stylisé (icon)
-- [ ]  bug dans les forms ou le form s'envoie meme si les questions required sont vides. 
+- [x]  bug dans les forms ou le form s'envoie meme si les questions required sont vides. 
 
 
 ## 🖍 Couleurs utilisées

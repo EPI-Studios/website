@@ -311,3 +311,16 @@ form button:hover, .backtoindex:hover {
     max-width: 80px;
     max-height: 80px;
 }
+.inputcdc {
+    position: absolute;
+    opacity: 0;
+    left: -9999px;
+}
+
+.cdc-img {
+    max-height: 100px;
+    max-width: 100px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
