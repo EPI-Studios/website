@@ -113,12 +113,17 @@ const submitBtn = document.getElementById('submitBtn');
 const confirmcmd = document.getElementById('confirmcmd');
 const forminputs = document.querySelectorAll('#formito')
 
-submitBtn.addEventListener('click', function(event) {
+form.addEventListener('submit', function(event) {
      event.preventDefault();
-
+     
+     if (form.checkValidity === 'function') {
+          if (!form.checkValidity()) {
+               form.reportValidity();
+               return;
+          }
+     }
+     
      // TODO Insert here backend to send the form
-     // TODO Fix bug where you can send the data even with required questions blank
-
      confirmcmd.classList.add('confirmcmd-visible');
      confirmcmd.scrollIntoView({
           behavior: 'smooth',
@@ -128,5 +133,7 @@ submitBtn.addEventListener('click', function(event) {
      
      forminputs.forEach(input => {
           input.disabled = true;
-     })
+     });
+     submitBtn.disabled = true;
+     submitBtn.style.cursor = 'default';
 });

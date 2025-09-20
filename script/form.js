@@ -111,37 +111,6 @@ document.addEventListener('click', function(event) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ! Form Style 
 
 const faq = document.getElementById('faq');
@@ -171,21 +140,38 @@ editbutton.addEventListener('click', function(event){ // ! J'avoue j'ai fait cet
 
 });
 
-
-
+const firstform = [preform, firstquestion, ...conditionalQuestions];
 
 nextbuttons.forEach(button => { //* Prevent default behavior and hide all forms just to display the end
      
      button.addEventListener('click', function(event){
           event.preventDefault();
-          endingQuestion.style.display = 'block';
-          HideAllForms();
-          preform.style.display = 'none';
-          faq.style.display = 'none';
-          endingQuestion.scrollIntoView({
-               behavior: 'auto',
-               block: 'start'
+
+          let isValid = true;
+
+          firstform.forEach(form => {
+               // Only check validity if it's a form or an element with checkValidity
+               if (typeof form.checkValidity === 'function') {
+                    if (!form.checkValidity()) {
+                         isValid = false;
+                         form.reportValidity();
+                    }
+               }
           });
+
+          if (isValid === true) {
+               console.log("valid!");
+               endingQuestion.style.display = 'block';
+               HideAllForms();
+               preform.style.display = 'none';
+               faq.style.display = 'none';
+               endingQuestion.scrollIntoView({
+                    behavior: 'auto',
+                    block: 'start'
+               });  
+          } else {
+               console.log('Form Is not valid');
+          }
      });
 });
 
@@ -234,6 +220,73 @@ radiooption.forEach(radio => {
 HideAllForms();
 endingQuestion.style.display = 'none';
 
+//* File validation: 
+// TODO: Make a validation like display a message when there's a file uploaded
 
-// ! TODO: INSERT HERE BACKEND SEND FORM
- // TODO Fix bug where you can send the data even with required questions blank
+
+ // * Form preventing and check validity :
+
+const finalSubmit = document.getElementById('finalSubmit');
+const allForms = [...firstform, endingQuestion];
+
+let allValid = true;
+
+finalSubmit.addEventListener('submit', function() {
+     allForms.forEach(form => {
+          if (typeof form.checkValidity() === 'function') {
+               
+               if (!form.checkValidity) {
+                    allValid = false;
+                    form.reportValidity();
+                    return;
+               };
+          };
+     });
+
+     if (allValid === true) {
+          console.log('valid!');
+     // ! TODO: INSERT BACKEND SEND FORM HERE
+
+
+     } else {
+          console.log('non-Valid');
+     };  
+});
+
+
+
+
+
+// * debug mode 
+const allText = document.querySelectorAll('input[type="text"]');
+const allEmail = document.querySelectorAll('input[type="email"]');
+const allNumbers = document.querySelectorAll('input[type="number"]');
+
+
+function debugMode() {
+     conditionalQuestions.forEach(question => {
+          question.style.display = 'block';
+     });
+
+     endingQuestion.style.display = 'block';
+     firstquestion.style.display = 'block';
+     
+
+     allText.forEach(input => {
+         input.value ="test"; 
+     });
+     allEmail.forEach(input => {
+          input.value = "contact@epistudios.fr";
+     });
+     allNumbers.forEach(input => {
+          input.value = "21";
+     });
+
+     const allFiles = document.querySelectorAll('input[type="file"]'); // ! AI, je suis pas capable de faire ça encore !
+     allFiles.forEach(input => {
+          // Create a dummy File object and set it as the input's files property
+          const dataTransfer = new DataTransfer();
+          dataTransfer.items.add(new File(["dummy content"], "dummy.txt", { type: "text/plain" }));
+          input.files = dataTransfer.files;
+     });
+};

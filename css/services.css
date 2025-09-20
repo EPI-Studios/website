@@ -302,11 +302,12 @@ form button:hover, .backtoindex:hover {
 
 .confirmcmd-visible {
     display: block;
-    animation: popout 0.5s ease;
+    animation: popout 0.2s ease;
 }
 
 .confirmcmd img {
-    margin-top: -240px;
-    margin-bottom: -240px;
-    scale: 0.1;
+    display: block;
+    margin: 0 auto;
+    max-width: 80px;
+    max-height: 80px;
 }

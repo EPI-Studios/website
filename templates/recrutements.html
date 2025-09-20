@@ -31,7 +31,7 @@
           vous apportera des compétences, du savoir-faire en équipe, et
           une autonomie sans failles ? <br>
           Rejoignez EPI Studio ! 
-     </p>
+     </p> 
 
      <!--TODO: Les radios buttons sont pas jolis donc je vais les refaire avec JS-->
      <form id="preform" class="preform">
@@ -91,7 +91,7 @@
      <hr>
 
      <!-- ! Form présentation pour tous les rôles-->
-     <form class="first-question">
+     <form class="first-question" id="first-question">
           
           <div class="container1">
                <div class="form-group">
@@ -128,9 +128,11 @@
           </div>
 
           <div class="form-group">
-               <label for="cv">Joignez votre CV à votre candidature. <br>
-               Pas besoin de lettre de motivation ! (pdf uniquement)</label>
-               <input type="file" name="cv" accept=".pdf" required>
+               <p>Joignez votre CV à votre candidature.
+                    Pas besoin de lettre de motivation ! (pdf uniquement)</p>
+               <input type="file" name="cv" id="hiddenCv" accept=".pdf" required class="hiddenCv">
+               <img src="../Ressources/upload.png" alt="Upload Button" class="upload-img" onclick="document.getElementById('hiddenCv').click()">
+               
                <!--TODO: Changer l'icone d'upload par une icône un peu mieux-->
           </div>
 
@@ -300,7 +302,7 @@
 
           <br>
 
-          <button type="submit" class="finalsubmit" id="finalsubmit">Envoyer</button>
+          <button type="submit" class="finalsubmit" id="finalSubmit">Envoyer</button>
      </form>
 
 

@@ -155,6 +155,19 @@ form p {
     width: 100%;
     margin-bottom: 1.5rem;
 }
+.hiddenCv {
+    position: absolute;
+    left: -99999px;
+    opacity: 0;
+}
+.upload-img {
+    display: block;
+    margin: 0 auto;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
 
 .radio-group {
     display: flex;
