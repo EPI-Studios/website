@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /easteregg.html
+Disallow: /recrutements.html
+Allow: /
+Sitemap: https://epistudios.fr/sitemap.xml

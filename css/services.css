@@ -4,50 +4,66 @@
 :root {
     --border-color: #c5c5c5;
 }
-.new-nav {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    padding: 20px 0;
-    background-color: #F2F1EC;
+/* -- HEADER & NAVIGATION -- */
+.iconcontainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 2rem;
+    gap: 1rem;
 }
 
-.new-navbar-container {
+.iconcontainer img {
+    width: 30px;
+    height: 30px;
+}
+
+.nav {
+    margin-bottom: 5rem;
+    position: relative;
+    z-index: 10;
+}
+.nav a {
+    text-decoration: none;
+    color: #536056;
+}
+
+.backgroundnavbar {
+    background-color: var(--bg-secondary);
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 50px;
+    padding: 2px;
+}
+
+.navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #DADCD9;
-    border-radius: 50px;
-    padding: 10px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 1.5rem;
 }
 
-.new-navbar-container .nav-link {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5em;
-    color: #536056;
-    text-decoration: none;
-    margin: 0 20px;
-    transition: color 0.3s ease-in-out;
+.navbar .feuille1,
+.navbar .feuille2 {
+    width: 50px;
+    height: auto;
 }
 
-.new-navbar-container .nav-link:hover {
-    color: #333;
+.navbar .feuille2 {
+    transform: scaleX(-1);
+    /* Retourne la feuille proprement */
 }
 
-.bust-center {
-    height: 70px;
-    margin: 0 30px;
+.navbar .serv1,
+.navbar .proj1 {
+    font-size: 2rem;
+    /* 32px */
+    font-weight: 500;
 }
 
-.feuille-left, .feuille-right {
-    height: 40px;
+.navbar .bust1 {
+    height: 120px;
+    width: auto;
 }
-
 /* ================================== */
 /* Styles de la page des services     */
 /* ================================== */
@@ -286,7 +302,7 @@ form button:hover, .backtoindex:hover {
     display: none;
 
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
     transform-origin: center;
