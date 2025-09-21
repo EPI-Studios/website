@@ -30,6 +30,28 @@ Ce projet vise à créer le site web officiel d'EPI-Studios. Il servira de vitri
 - [x]  bug dans les forms ou le form s'envoie meme si les questions required sont vides. 
 - [ ]  Modifier le guide gratuit dans services.html pour que le client comprenne que c'est gratuit si il achète un serveur tout fait
 
+### Backend: 
+- [ ] Quand l'utilisateur clique sur "finalSubmit" dans recrutement.html, ça envoie un mail à contact@epistudios.fr
+> Format du mail: 
+Sujet : Nouvelle candidature [poste choisis dans la première question]
+cc : gael.tournier@epistudios.fr et nathan.poulain@epistudios.fr
+contenu: 
+Question (ou alors un abregé de la question) - Réponse + saut de ligne à la fin pour la lisibilité. 
+Faire pareil pour toutes les questions
+
+Le CV arrive en pièce jointe du mail
+
+
+- [ ] Formulaire de commande -> submitBtn dans services.html envoie un mail à contact.epistudios.fr
+> Format du mail: 
+Sujet : Nouvelle commande !
+cc : gael.tournier@epistudios.fr et nathan.poulain@epistudios.fr
+contenu: 
+Question (ou alors un abregé de la question) - Réponse + saut de ligne à la fin pour la lisibilité. 
+Faire pareil pour toutes les questions
+
+Le CDC (si il y en a un) arrive en pièce jointe du mail
+
 ## 🖍 Couleurs utilisées
 
 | Color             | Hex                                                                |
