@@ -254,7 +254,35 @@ finalSubmit.addEventListener('submit', function() {
 });
 
 
+const stars = document.querySelectorAll('.star');
+let selectedRating = 0;
 
+stars.forEach((star, index) => {
+     star.addEventListener('mouseover', function() {
+          highlightStars(index + 1);
+     });
+
+     star.addEventListener('mouseout', function() {
+          highlightStars(selectedRating);
+     });
+
+     star.addEventListener('click', function() {
+          selectedRating = index + 1;
+          highlightStars(selectedRating);
+     });
+});
+
+function highlightStars(rating) {
+     stars.forEach((star, index) => {
+          if (index < rating) {
+               star.style.color = '#ffd700';
+          } else {
+               star.style.color = '#c5c5c5';
+          }
+     });
+}
+
+highlightStars(0);
 
 
 // * debug mode 

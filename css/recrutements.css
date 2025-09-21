@@ -214,6 +214,8 @@ form p {
 }
 
 
+
+
 /* -- FORMULAIRE FINAL -- */
 .notation {
     background-color: var(--bg-secondary);
@@ -227,12 +229,17 @@ form p {
     text-align: center;
     margin-bottom: 1rem;
 }
+
 .stars {
     font-size: 3rem;
     display: flex;
     justify-content: center;
     gap: 1rem;
     cursor: pointer;
+}
+
+.star {
+    transition: color 0.2s;
 }
 .questrem {
     font-size: 1.5rem;
