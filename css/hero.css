@@ -18,6 +18,7 @@ a {
     text-decoration: none;
     color: var(--text-main);
 }
+
 .strong {
     font-weight: 700;
 }
@@ -140,7 +141,6 @@ a {
     height: auto;
 }
 
-
 .stats, .footer {
     text-align: center;
     padding: 4rem 2rem;
@@ -227,22 +227,29 @@ a {
     max-width: 80%;
     margin: 0 auto;
 }
+
 .textquote {
     font-weight: 700;
 }
 
 
+
+
+
 .profile {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 170%);
+    position: relative;
+    margin: 3rem auto 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 3rem;
+    gap: 0.75rem;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
 }
+
+
 
 
 .pfpprofile {
@@ -250,17 +257,17 @@ a {
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
+
 }
+
 
 .profile p {
     margin: 0;
     text-align: left;
     color: var(--bg-main);
 }
-.nameprofile {
-    font-weight: 700;
-    font-size: 1.2rem;
-}
+
+
 .titleprofile {
     font-size: 1rem;
 }
@@ -329,15 +336,12 @@ a {
         gap: 2rem;
         min-height: 600px;
     }
-
     .titlepres {
         font-size: 4.5rem;
     }
-
     .textpres {
         font-size: 1.1rem;
     }
-
     .containerstats {
         gap: 2rem;
     }
@@ -348,36 +352,29 @@ a {
         margin-top: -40px;
         padding: 1.5rem;
     }
-
     .presentation-container {
         flex-direction: column;
         min-height: auto;
         text-align: center;
         padding: 2.5rem 1.5rem;
     }
-
     .image-section {
         order: -1;
         height: 420px;
     }
-
     .titlepres {
         font-size: 3.5rem;
     }
-
     .textpres {
         margin: 1rem auto;
         max-width: 90%;
     }
-
     .stats {
         padding: 4rem 1.5rem 6rem 1.5rem;
     }
-
     .containerstats {
         flex-wrap: wrap;
     }
-
     .quote-section {
         padding: 2.5rem 1.5rem;
     }
@@ -433,11 +430,7 @@ a {
     }
 
     .profile {
-        position: static;
-        transform: none;
         margin-top: 2rem;
-        flex-direction: column;
-        text-align: center;
     }
 
     .profile p {
@@ -472,6 +465,21 @@ a {
         height: 200px;
     }
 
+    .quote-section {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .quote-section > img {
+        top: -20px;
+        height: 130%;
+    }
+
+    .textquote,
+    .textquote2 {
+        max-width: 100%;
+        font-size: 1.05rem;
+    }
+
     .quote-section,
     .partners {
         padding: 0 1rem;
@@ -487,3 +495,15 @@ a {
     }
 }
 
+@media (min-width: 992px) {
+    .profile {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .profile p {
+        text-align: left;
+    }
+}

@@ -62,6 +62,7 @@ a {
     padding: 2rem;
     align-items: center;
     text-align: left;
+    flex-wrap: wrap;
 }
 
 .project-card img {
@@ -93,6 +94,9 @@ a {
     border-radius: 8px;
     font-weight: 600;
     transition: background-color 0.2s;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
 }
 
 .project-info a:hover {
@@ -172,8 +176,134 @@ a {
     font-size: 1.2rem;
     font-weight: 600;
     transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
 }
 
 .join-us a:hover {
     background-color: #333d36;
+}
+
+/* -- RESPONSIVE -- */
+@media (max-width: 1024px) {
+    .page-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .nosprojets h1 {
+        font-size: 3rem;
+    }
+
+    .project-card {
+        gap: 1.5rem;
+    }
+
+    .project-card img {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-container {
+        padding: 2rem 1.25rem;
+    }
+
+    .nosprojets h1 {
+        font-size: 2.6rem;
+    }
+
+    .nosprojets > p {
+        font-size: 1.05rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .project-card img {
+        width: min(70%, 220px);
+        height: auto;
+    }
+
+    .project-info {
+        width: 100%;
+    }
+
+    .project-info h2 {
+        font-size: 1.7rem;
+    }
+
+    .project-info p {
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .project-info a {
+        width: 100%;
+    }
+
+    .meettheteam {
+        padding: 3rem 0;
+    }
+
+    .meettheteam h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .join-us p {
+        font-size: 1.6rem;
+    }
+
+    .join-us a {
+        width: 100%;
+        max-width: 320px;
+        display: inline-flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .nosprojets h1 {
+        font-size: 2.2rem;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+
+    .project-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .project-info p {
+        font-size: 0.95rem;
+    }
+
+    .project-info a {
+        padding: 0.7rem 1rem;
+    }
+
+    .join-us {
+        padding: 3rem 1.25rem;
+    }
+
+    .join-us p {
+        font-size: 1.4rem;
+    }
+
+    .join-us a {
+        font-size: 1.05rem;
+        padding: 0.9rem 1.5rem;
+    }
 }
