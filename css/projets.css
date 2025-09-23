@@ -177,3 +177,20 @@ a {
 .join-us a:hover {
     background-color: #333d36;
 }
+
+
+/*** Responsive Design ***/
+@media (max-width:576px) {
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-card img {
+        width: 100%;
+        height: auto;
+    }
+    .project-info a {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+}
