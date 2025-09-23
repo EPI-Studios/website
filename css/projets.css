@@ -307,3 +307,20 @@ a {
         padding: 0.9rem 1.5rem;
     }
 }
+
+
+/*** Responsive Design ***/
+@media (max-width:576px) {
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .project-card img {
+        width: 100%;
+        height: auto;
+    }
+    .project-info a {
+        display: inline-block;
+        margin-top: 1rem;
+    }
+}
