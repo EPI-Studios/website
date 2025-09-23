@@ -69,3 +69,17 @@ footer a:hover {
      text-decoration: underline 1px !important;
      color: var(--text-hover) !important;
 }
+
+
+
+/** Responsive Design*/
+
+@media (max-width: 576px) {
+     .footercontainer {
+          flex-direction: column;
+          gap: 3rem;
+     }
+     body {
+          overflow-x: hidden;
+     }
+}

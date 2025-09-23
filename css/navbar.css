@@ -1,0 +1,59 @@
+/* -- HEADER & NAVIGATION -- */
+.iconcontainer {
+     display: flex;
+     justify-content: flex-end;
+     padding: 1rem 2rem;
+     gap: 1rem;
+}
+
+.iconcontainer img {
+     width: 30px;
+     height: 30px;
+}
+
+.nav {
+     margin-bottom: 5rem;
+     position: relative;
+     z-index: 10;
+}
+
+.backgroundnavbar {
+     background-color: var(--bg-secondary);
+     max-width: 900px;
+     margin: 0 auto;
+     border-radius: 50px;
+     padding: 2px;
+}
+
+.navbar {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 1.5rem;
+}
+
+.navbar .feuille1,
+.navbar .feuille2 {
+     width: 50px;
+     height: auto;
+}
+
+.navbar .feuille2 {
+     transform: scaleX(-1);
+     /* Retourne la feuille proprement */
+}
+
+.navbar .serv1,
+.navbar .proj1 {
+     font-size: 2rem;
+     /* 32px */
+     font-weight: 500;
+}
+
+.navbar .bust1 {
+     height: 120px;
+     width: auto;
+}
+
+
+/** Responsive Design*/

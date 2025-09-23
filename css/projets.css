@@ -21,45 +21,6 @@ a {
     color: var(--text-main);
 }
 
-/* -- NAVBAR -- */
-.nav {
-    margin-bottom: 2rem;
-}
-
-.backgroundnavbar {
-    background-color: var(--bg-secondary);
-    max-width: 900px;
-    margin: 2rem auto 0 auto;
-    border-radius: 50px;
-    padding: 2px;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.navbar .feuille1, .navbar .feuille2 {
-    width: 40px;
-    height: auto;
-}
-
-.navbar .feuille2 {
-    transform: scaleX(-1);
-}
-
-.navbar .serv1, .navbar .proj1 {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.navbar .bust1 {
-    height: 120px;
-    width: auto;
-}
-
 
 /* -- MISE EN PAGE PRINCIPALE -- */
 .page-container {
