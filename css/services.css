@@ -285,3 +285,103 @@ form button:hover, .backtoindex:hover {
     margin: 0 auto;
     cursor: pointer;
 }
+
+/* -- RESPONSIVE -- */
+@media (max-width: 1200px) {
+    .service-category,
+    .more-services,
+    .faq-section {
+        padding: 0 15px;
+    }
+
+    .card {
+        flex: 1 1 280px;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        padding-top: 110px;
+    }
+
+    header {
+        padding: 30px 15px;
+    }
+
+    .card {
+        flex: 1 1 45%;
+    }
+
+    form {
+        max-width: 90%;
+        padding: 30px;
+    }
+
+    .confirmcmd {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+
+    .more-services button,
+    form button,
+    .backtoindex {
+        max-width: 100%;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 25px 20px 35px 20px;
+    }
+
+    .confirmcmd {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 90px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .service-category h2,
+    .more-services h2,
+    .faq-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1.3rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+    }
+
+    .more-services button {
+        max-width: 100%;
+    }
+}

@@ -271,3 +271,93 @@ input[type="radio"]:checked+.radio-button::after {
     transform: translate(-50%, -50%);
     transition: all 0.3s;
 }
+
+/* -- RESPONSIVE -- */
+@media (max-width: 1200px) {
+    .page-container {
+        padding: 2rem 1.5rem;
+    }
+
+    form,
+    .FAQ {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .texttitle {
+        font-size: 1.1rem;
+    }
+
+    form,
+    .FAQ {
+        max-width: 90%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .page-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .notation {
+        padding: 1.5rem;
+    }
+
+    .stars {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .texttitle {
+        font-size: 1rem;
+        margin: 0 1rem 2rem 1rem;
+    }
+
+    form,
+    .FAQ {
+        padding: 1.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+    }
+
+    .nextbutton,
+    .finalsubmit,
+    .editbutton {
+        width: 100%;
+    }
+
+    .notation p,
+    .questrem {
+        font-size: 1.2rem;
+    }
+}
+
