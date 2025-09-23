@@ -142,12 +142,66 @@ header h1, header p {
 /* Section F.A.Q */
 .faq-item {
     background-color: #DADCD9;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px 0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item + .faq-item {
+    margin-top: 1.5rem;
+}
+
+.faq-item.faq-open {
+    background-color: #bec0bd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.faq-toggle {
+    background: none;
+    border: none;
+    color: inherit;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.faq-item.faq-open .faq-icon {
+    transform: rotate(45deg);
+}
+.faq-toggle:focus-visible {
+    outline: 2px solid #536056;
+    outline-offset: 4px;
+}
+
+.faq-answer {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.faq-answer p {
+    margin: 0 0 0.75rem 0;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
 }
 
 .more-services button {
