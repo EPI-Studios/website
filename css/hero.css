@@ -249,6 +249,9 @@ a {
     text-align: center;
     max-width: 520px;
     width: 100%;
+    outline: black 1px solid;
+    border-radius: 25px;
+    padding: 10px;
 }
 
 
@@ -267,6 +270,10 @@ a {
     margin: 0;
     text-align: left;
     color: var(--text-main);
+}
+.nameprofile {
+    font-weight: 700;
+    font-size: 1.5rem;
 }
 
 

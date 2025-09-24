@@ -30,6 +30,12 @@ document.addEventListener('click', function(event) {
           +"passionné(e)s par le développement ou que le projet vous intéresse !\n Au dela, l'association peut vous fournir du matériel"
           + " afin que vous puissiez exercer dans de bonnes conditions !\n Vos projets serons également crédités, ce qui peut booster"
           + " votre CV si vous débutez dans votre activité !";
+          
+          if (window.innerWidth >= 380 && window.innerWidth <= 580) {
+               box1.style.height = '500px';
+          } else if (window.innerWidth < 380) {
+               box1.style.height = '600px';
+          }
 
      } else if ((event.target === box1 || event.target === answer1) && box1Out == true) { //* Box 1 closing
           box1Out = false; 
@@ -51,6 +57,10 @@ document.addEventListener('click', function(event) {
           answer2.style.lineHeight ="1.5";
           answer2.innerText = "Nous sommes une association Loi 1901 créée le 24/08/25 ! Toutes les infos sont disponibles dans\n"
           + "les mentions légales et les CGV !";
+          
+          if (window.innerWidth <= 580) {
+               box2.style.height = '150px';
+          }
 
      } else if ((event.target === box2 || event.target === answer2) && box2Out == true) {  // * Box 2 closing
           box2Out = false;
@@ -76,6 +86,11 @@ document.addEventListener('click', function(event) {
           +"des programmes ou logos pour des clients, vous donnant une experience vendeur et producteur!\n"
           +"Cette partie est évidemment optionnelle, notre principale activitée étant bien évidemment la création (open-source)!";
 
+          if (window.innerWidth >= 380 && window.innerWidth <= 580) {
+               box3.style.height = '500px';
+          } else if (window.innerWidth < 380) {
+               box3.style.height = '600px';
+          }
      } else if ((event.target === box3 || event.target === answer3) && box3Out == true) { // * Box 3 closing
           box3Out = false;
 
@@ -98,6 +113,11 @@ document.addEventListener('click', function(event) {
           +"Si vous êtes débutant(e)s, vous êtes le/la bienvenue, tant que vous avez les bases et que vous avez une soif d'apprendre!\n"
           +"Quelque soit votre experience, votre âge, votre genre ou votre nationalité, vous serez les bienvenues du moment que vous êtes prêt(e) à vous investir!";
 
+          if (window.innerWidth >= 380 && window.innerWidth <= 580) {
+               box4.style.height = '450px';
+          } else if (window.innerWidth < 380) {
+               box4.style.height = '500px';
+          }
      } else if ((event.target === box4 || event.target === answer4) && box4Out == true) { // * Box 4 closing
           box4Out = false;
 
@@ -221,8 +241,22 @@ HideAllForms();
 endingQuestion.style.display = 'none';
 
 //* File validation: 
-// TODO: Make a validation like display a message when there's a file uploaded
+const fileInput = document.querySelector('input[type="file"]');
+const fileIcon = document.querySelector('.upload-img'); // Assuming you have an icon element
 
+if (fileInput && fileIcon) {
+     fileInput.addEventListener('change', function(event) {
+          if (event.target.files && event.target.files.length > 0) {
+               // File uploaded - change to placeholder image
+               fileIcon.src = '../SEO/check-logo.png'; // Replace with your uploaded file icon path
+               fileIcon.alt = 'File uploaded';
+          } else {
+               // No file - reset to original image
+               fileIcon.src = '../SEO/upload-icone.png'; // Replace with your original file icon path
+               fileIcon.alt = 'Upload file';
+          }
+     });
+}
 
  // * Form preventing and check validity :
 
@@ -245,7 +279,7 @@ finalSubmit.addEventListener('submit', function() {
 
      if (allValid === true) {
           console.log('valid!');
-     // ! TODO: INSERT BACKEND SEND FORM HERE
+     // ! TODO: INSERT BACKEND SEND FORM HERE + QUAND L'UTILISATEUR ENVOIE LE FORM, LE BOUTON LE RENVOIE SUR LA PAGE D'ACCUEIL !
 
 
      } else {

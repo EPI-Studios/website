@@ -24,7 +24,7 @@ body {
 }
 
 /* En-tête */
-header {
+header { 
     /* La propriété background-color a été retirée */
     color: #fff; /* Garde le texte en blanc si nécessaire, sinon le rendre en gris foncé */
     text-align: center;
@@ -51,7 +51,7 @@ header h1, header p {
 
 .title-with-desc {
     margin-bottom: 5px;
-}
+} 
 
 .category-description {
     font-style: italic;

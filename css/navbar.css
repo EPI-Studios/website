@@ -1,3 +1,4 @@
+
 /* -- HEADER & NAVIGATION -- */
 .iconcontainer {
      display: flex;
@@ -123,3 +124,50 @@
      }
 }
 
+/** Drop menu for responsive design*/
+
+@media (min-width: 581px) {
+     .dropmenu, .dropnav {
+          display: none;
+     }
+}
+
+
+
+.dropnav {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     margin-left: 15px;
+     opacity: 0;
+     max-height: 0;
+     overflow: hidden;
+     transition: all 0.3s ease-in-out;
+     transform: translateY(-10px);
+     
+}
+.dropnav-show {
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+     margin-left: 15px;
+     opacity: 1;
+     max-height: fit-content;
+     transform: translateY(0);
+}
+
+.dropnav a {
+     font-size: 1.25rem;
+}
+
+.dropmenu {
+     width: 50px;
+     height: auto;
+     transform: scale(1);
+     transition: all 0.2 ease-in-out;
+}
+.dropmenu-show {
+     width: 50px;
+     height: auto;
+     transform: scale(1.2);   
+}

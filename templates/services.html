@@ -9,21 +9,38 @@
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/navbar.css">
+
     <script src="../script/services.js" defer></script>
+    <script src="../script/navbar.js" defer></script>
 </head>
 <body>
 
-    <nav class="nav">
-        <div class="backgroundnavbar">
-            <div class="navbar">
-                <img src="../SEO/feuille-icone.png" alt="" class="feuille1">
-                <a href="../templates/services.html" class="serv1">Services</a>
-                <a href="../templates/index.html"><img src="../SEO/epi-logo-tete.png" alt="" class="bust1"></a>
-                <a href="../templates/projets.html" class="proj1">Projets</a>
-                <img src="../SEO/feuille-icone.png" alt="" class="feuille2">
-            </div>
+    <section>
+        <div class="iconcontainer">
+            <a href="#" aria-label="Lien vers notre Discord"><img src="../SEO/discord-logo.png" class="discordicon"></a>
+            <a href="#" aria-label="Lien vers notre GitHub"><img src="../SEO/github-logo.png" class="githubicon"></a>
         </div>
-    </nav>
+    
+        <nav class="nav" id="nav">
+    
+            <img src="../SEO/menu-icone.png" id="dropMenu" class="dropmenu">
+            <div class="dropnav">
+                <a href="../templates/index.html" class="serv1">-> Accueil</a>
+                <a href="../templates/services.html" class="serv1">-> Services</a>
+                <a href="../templates/projets.html" class="proj1">-> Projets</a>
+            </div>
+    
+            <div class="backgroundnavbar" id="backNav">
+                <div class="navbar" id="navBar">
+                    <img src="../SEO/feuille-icone.png" alt="" class="feuille1">
+                    <a href="../templates/services.html" class="serv1">Services</a>
+                    <a href="../templates/index.html"><img src="../SEO/epi-logo-tete.png" alt="" class="bust1"></a>
+                    <a href="../templates/projets.html" class="proj1">Projets</a>
+                    <img src="../SEO/feuille-icone.png" alt="" class="feuille2">
+                </div>
+            </div>
+        </nav>
+    </section>
     
     <header>
         <div class="header-content" id="tohide">

@@ -1,5 +1,8 @@
 User-agent: *
 Disallow: /easteregg.html
 Disallow: /recrutements.html
+Disallow: /credits.html
+Disallow: /cgv.html 
+Disallow: /mentions.html 
 Allow: /
 Sitemap: https://epistudios.fr/sitemap.xml
