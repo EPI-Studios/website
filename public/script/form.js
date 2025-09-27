@@ -1,4 +1,3 @@
-// ! F.A.Q
 const box1 = document.getElementById('box1');
 const box2 = document.getElementById('box2');
 const box3 = document.getElementById('box3');
@@ -7,17 +6,15 @@ const answer1 = document.getElementById('answer1');
 const answer2 = document.getElementById('answer2');
 const answer3 = document.getElementById('answer3');
 const answer4 = document.getElementById('answer4');
-// ! yes I know this could've been much more optimized, but 
 
 let box1Out = false;
 let box2Out = false;
 let box3Out = false;
 let box4Out = false;
 
-
 document.addEventListener('click', function(event) {
 
-     if ((event.target === box1 || event.target === answer1) && box1Out == false) { // * Box 1 open
+     if ((event.target === box1 || event.target === answer1) && box1Out == false) {
           box1Out = true;
 
           box1.style.backgroundColor = '#bec0bd';
@@ -37,7 +34,7 @@ document.addEventListener('click', function(event) {
                box1.style.height = '600px';
           }
 
-     } else if ((event.target === box1 || event.target === answer1) && box1Out == true) { //* Box 1 closing
+     } else if ((event.target === box1 || event.target === answer1) && box1Out == true) {
           box1Out = false; 
 
           box1.style.backgroundColor = '#DADCD9';
@@ -47,7 +44,7 @@ document.addEventListener('click', function(event) {
 
      }
      
-     if ((event.target === box2 || event.target === answer2) && box2Out == false) { // * Box 2 open
+     if ((event.target === box2 || event.target === answer2) && box2Out == false) {
           box2Out = true;
 
           box2.style.backgroundColor = '#bec0bd';
@@ -62,7 +59,7 @@ document.addEventListener('click', function(event) {
                box2.style.height = '150px';
           }
 
-     } else if ((event.target === box2 || event.target === answer2) && box2Out == true) {  // * Box 2 closing
+     } else if ((event.target === box2 || event.target === answer2) && box2Out == true) {
           box2Out = false;
 
           box2.style.backgroundColor = '#DADCD9';
@@ -71,7 +68,7 @@ document.addEventListener('click', function(event) {
           answer2.innerText = '';
      }
      
-     if ((event.target === box3 || event.target === answer3) && box3Out == false) { // * Box 3 open
+     if ((event.target === box3 || event.target === answer3) && box3Out == false) {
           box3Out = true;
 
           box3.style.backgroundColor = '#bec0bd';
@@ -91,7 +88,7 @@ document.addEventListener('click', function(event) {
           } else if (window.innerWidth < 380) {
                box3.style.height = '600px';
           }
-     } else if ((event.target === box3 || event.target === answer3) && box3Out == true) { // * Box 3 closing
+     } else if ((event.target === box3 || event.target === answer3) && box3Out == true) {
           box3Out = false;
 
           box3.style.backgroundColor = '#DADCD9';
@@ -100,7 +97,7 @@ document.addEventListener('click', function(event) {
           answer3.innerText = '';
      }
 
-     if ((event.target === box4 || event.target === answer4) && box4Out == false) { // * Box 4 Open
+     if ((event.target === box4 || event.target === answer4) && box4Out == false) {
           box4Out = true;
 
           box4.style.backgroundColor = '#bec0bd';
@@ -118,7 +115,7 @@ document.addEventListener('click', function(event) {
           } else if (window.innerWidth < 380) {
                box4.style.height = '500px';
           }
-     } else if ((event.target === box4 || event.target === answer4) && box4Out == true) { // * Box 4 closing
+     } else if ((event.target === box4 || event.target === answer4) && box4Out == true) {
           box4Out = false;
 
           box4.style.backgroundColor = '#DADCD9';
@@ -127,11 +124,6 @@ document.addEventListener('click', function(event) {
           answer4.innerText = '';
      }
 });
-
-
-
-
-// ! Form Style 
 
 const faq = document.getElementById('faq');
 const preform = document.getElementById('preform');
@@ -143,7 +135,7 @@ const firstquestion = document.querySelector('.first-question');
 const nextbuttons = document.querySelectorAll('.nextbutton');
 const editbutton = document.querySelector('.editbutton');
 
-editbutton.addEventListener('click', function(event){ // ! J'avoue j'ai fait cette partie à l'IA j'ai rien compris
+editbutton.addEventListener('click', function(event){
      event.preventDefault();
      endingQuestion.style.display = 'none';
 
@@ -162,7 +154,7 @@ editbutton.addEventListener('click', function(event){ // ! J'avoue j'ai fait cet
 
 const firstform = [preform, firstquestion, ...conditionalQuestions];
 
-nextbuttons.forEach(button => { //* Prevent default behavior and hide all forms just to display the end
+nextbuttons.forEach(button => {
      
      button.addEventListener('click', function(event){
           event.preventDefault();
@@ -170,7 +162,6 @@ nextbuttons.forEach(button => { //* Prevent default behavior and hide all forms 
           let isValid = true;
 
           firstform.forEach(form => {
-               // Only check validity if it's a form or an element with checkValidity
                if (typeof form.checkValidity === 'function') {
                     if (!form.checkValidity()) {
                          isValid = false;
@@ -195,9 +186,6 @@ nextbuttons.forEach(button => { //* Prevent default behavior and hide all forms 
      });
 });
 
-
-
-
 function HideAllForms() {
 
      firstquestion.style.display = 'none';
@@ -216,9 +204,6 @@ function ShowConditional(questionId) {
           questionElement.style.display = 'block';
      };
 };
-
-
-
 
 radiooption.forEach(radio => {
      radio.addEventListener('change', function(){
@@ -240,36 +225,32 @@ radiooption.forEach(radio => {
 HideAllForms();
 endingQuestion.style.display = 'none';
 
-//* File validation: 
 const fileInput = document.querySelector('input[type="file"]');
-const fileIcon = document.querySelector('.upload-img'); // Assuming you have an icon element
+const fileIcon = document.querySelector('.upload-img');
 
 if (fileInput && fileIcon) {
      fileInput.addEventListener('change', function(event) {
           if (event.target.files && event.target.files.length > 0) {
-               // File uploaded - change to placeholder image
-               fileIcon.src = '../SEO/check-logo.png'; // Replace with your uploaded file icon path
+               fileIcon.src = '../SEO/check-logo.png';
                fileIcon.alt = 'File uploaded';
           } else {
-               // No file - reset to original image
-               fileIcon.src = '../SEO/upload-icone.png'; // Replace with your original file icon path
+               fileIcon.src = '../SEO/upload-icone.png';
                fileIcon.alt = 'Upload file';
           }
      });
 }
 
- // * Form preventing and check validity :
-
 const finalSubmit = document.getElementById('finalSubmit');
 const allForms = [...firstform, endingQuestion];
 
-let allValid = true;
+finalSubmit.addEventListener('submit', async function(event) {
+     event.preventDefault();
 
-finalSubmit.addEventListener('submit', function() {
+     let allValid = true;
+
      allForms.forEach(form => {
-          if (typeof form.checkValidity() === 'function') {
-               
-               if (!form.checkValidity) {
+          if (typeof form.checkValidity === 'function') {
+               if (!form.checkValidity()) {
                     allValid = false;
                     form.reportValidity();
                     return;
@@ -277,16 +258,55 @@ finalSubmit.addEventListener('submit', function() {
           };
      });
 
-     if (allValid === true) {
-          console.log('valid!');
-     // ! TODO: INSERT BACKEND SEND FORM HERE + QUAND L'UTILISATEUR ENVOIE LE FORM, LE BOUTON LE RENVOIE SUR LA PAGE D'ACCUEIL !
+     if (allValid) {
+          const formData = new FormData();
+          
+          const selectedRadio = Array.from(radiooption).find(radio => radio.checked);
+          if (selectedRadio) {
+               formData.append('poste', selectedRadio.value);
+          }
 
+          const textInputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], textarea');
+          textInputs.forEach(input => {
+               if (input.name && input.value) {
+                    formData.append(input.name, input.value);
+               }
+          });
 
+          const fileInput = document.querySelector('input[type="file"]');
+          if (fileInput && fileInput.files[0]) {
+               formData.append('cv', fileInput.files[0]);
+          }
+
+          const ratingValue = document.querySelector('input[name="rating"]');
+          if (ratingValue) {
+               formData.append('rating', ratingValue.value);
+          } else {
+               formData.append('rating', selectedRating.toString());
+          }
+
+          try {
+               const response = await fetch('/api/recruitment', {
+                    method: 'POST',
+                    body: formData
+               });
+
+               const result = await response.json();
+
+               if (result.success) {
+                    alert('Candidature envoyée avec succès!');
+                    window.location.href = '../templates/index.html';
+               } else {
+                    alert('Erreur lors de l\'envoi: ' + result.message);
+               }
+          } catch (error) {
+               console.error('Erreur:', error);
+               alert('Erreur lors de l\'envoi de la candidature');
+          }
      } else {
-          console.log('non-Valid');
-     };  
+          console.log('Form non valide');
+     }
 });
-
 
 const stars = document.querySelectorAll('.star');
 let selectedRating = 0;
@@ -318,12 +338,9 @@ function highlightStars(rating) {
 
 highlightStars(0);
 
-
-// * debug mode 
 const allText = document.querySelectorAll('input[type="text"]');
 const allEmail = document.querySelectorAll('input[type="email"]');
 const allNumbers = document.querySelectorAll('input[type="number"]');
-
 
 function debugMode() {
      conditionalQuestions.forEach(question => {
@@ -344,9 +361,8 @@ function debugMode() {
           input.value = "21";
      });
 
-     const allFiles = document.querySelectorAll('input[type="file"]'); // ! AI, je suis pas capable de faire ça encore !
+     const allFiles = document.querySelectorAll('input[type="file"]');
      allFiles.forEach(input => {
-          // Create a dummy File object and set it as the input's files property
           const dataTransfer = new DataTransfer();
           dataTransfer.items.add(new File(["dummy content"], "dummy.txt", { type: "text/plain" }));
           input.files = dataTransfer.files;
