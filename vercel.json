@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/templates/index.html"
+    },
+    {
+      "source": "/services",
+      "destination": "/templates/services.html"
+    },
+    {
+      "source": "/projets",
+      "destination": "/templates/projets.html"
+    },
+    {
+      "source": "/recrutements",
+      "destination": "/templates/recrutements.html"
+    },
+    {
+      "source": "/mentions",
+      "destination": "/templates/mentions.html"
+    },
+    {
+      "source": "/cgv",
+      "destination": "/templates/cgv.html"
+    },
+    {
+      "source": "/credits",
+      "destination": "/templates/credits.html"
+    }
+  ]
+}
