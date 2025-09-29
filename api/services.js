@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     try {
         const [fields, files] = await form.parse(req);
 
-        const transporter = nodemailer.createTransporter({
+        const transporter = nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
             port: parseInt(process.env.EMAIL_PORT),
             secure: process.env.EMAIL_PORT == 465,
