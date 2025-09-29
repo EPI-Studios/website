@@ -240,11 +240,12 @@ if (fileInput && fileIcon) {
      });
 }
 
-const finalSubmit = document.getElementById('finalSubmit');
+const finalSubmitForm = document.getElementById('formfinished');
 const allForms = [...firstform, endingQuestion];
 
-finalSubmit.addEventListener('submit', async function(event) {
+finalSubmitForm.addEventListener('submit', async function(event) {
      event.preventDefault();
+     console.log('Form submit triggered');
 
      let allValid = true;
 
@@ -259,11 +260,13 @@ finalSubmit.addEventListener('submit', async function(event) {
      });
 
      if (allValid) {
+          console.log('All forms valid, preparing FormData');
           const formData = new FormData();
           
           const selectedRadio = Array.from(radiooption).find(radio => radio.checked);
           if (selectedRadio) {
                formData.append('poste', selectedRadio.value);
+               console.log('Poste:', selectedRadio.value);
           }
 
           const textInputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], textarea');
@@ -276,6 +279,7 @@ finalSubmit.addEventListener('submit', async function(event) {
           const fileInput = document.querySelector('input[type="file"]');
           if (fileInput && fileInput.files[0]) {
                formData.append('cv', fileInput.files[0]);
+               console.log('CV file attached');
           }
 
           const ratingValue = document.querySelector('input[name="rating"]');
@@ -285,17 +289,21 @@ finalSubmit.addEventListener('submit', async function(event) {
                formData.append('rating', selectedRating.toString());
           }
 
+          console.log('Sending request to /api/recruitment');
+          
           try {
                const response = await fetch('/api/recruitment', {
                     method: 'POST',
                     body: formData
                });
 
+               console.log('Response received:', response.status);
                const result = await response.json();
+               console.log('Result:', result);
 
                if (result.success) {
                     alert('Candidature envoyée avec succès!');
-                    window.location.href = '../templates/index.html';
+                    window.location.href = '/';
                } else {
                     alert('Erreur lors de l\'envoi: ' + result.message);
                }
