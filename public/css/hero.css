@@ -171,6 +171,8 @@ a {
 
 .containerstats {
     display: flex;
+    height: 100%;
+    width: auto;
     justify-content: center;
     gap: 3rem;
     margin-bottom: 5rem;
@@ -178,8 +180,8 @@ a {
 
 .containerstats > div {
     position: relative; /* Contexte pour le texte superposé */
-    width: 200px;
-    height: 200px;
+    width: 320px;
+    height: 320px;
 }
 
 .containerstats img {
@@ -190,11 +192,11 @@ a {
 
 .containerstats p {
     position: absolute;
-    top: 30%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--text-main);
-    font-size: 6rem;
+    font-size: 10rem;
     font-weight: 600;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
@@ -216,11 +218,13 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    background: var(--text-main) url('../SEO/fond-feuilles-vert.png') center / cover no-repeat;
+    background: var(--text-main) url('../SEO/fond-feuilles-vert.png') center/cover no-repeat;
+    background-size: 250% 250%;
 }
 
 .quote-section > img {
     display: none;
+
 }
 
 .textquote,
