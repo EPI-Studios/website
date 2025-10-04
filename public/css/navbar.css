@@ -20,17 +20,19 @@
 
 .backgroundnavbar {
      background-color: var(--bg-secondary);
-     max-width: 900px;
+     max-width: 1000px;
      margin: 0 auto;
      border-radius: 50px;
-     padding: 2px;
+     max-height: 90px;
+     box-shadow: 1px 1px 10px var(--bg-secondary);
 }
 
 .navbar {
      display: flex;
      justify-content: center;
      align-items: center;
-     gap: 1.5rem;
+     gap: 4rem;
+
 }
 
 .navbar .feuille1,
@@ -54,6 +56,7 @@
 .navbar .bust1 {
      height: 120px;
      width: auto;
+     max-height: 90px;
 }
 
 
