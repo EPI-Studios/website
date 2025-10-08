@@ -1,4 +1,3 @@
-
 /* -- HEADER & NAVIGATION -- */
 .iconcontainer {
      display: flex;
@@ -105,25 +104,59 @@
 }
 
 @media (max-width: 576px) {
-     .backgroundnavbar {
-          margin: 0 1rem;
-          border-radius: 25px;
-          padding: 0.75rem 1.5rem;
-     }
-
-     .navbar {
-          flex-direction: column;
+     .iconcontainer {
+          justify-content: space-between;
+          padding: 0.5rem 1rem;
           align-items: center;
-          gap: 0.75rem;
      }
 
-     .navbar .serv1,
-     .navbar .proj1 {
-          font-size: 1.25rem;
+     .backgroundnavbar {
+          display: none;
      }
 
-     .navbar .bust1 {
-          height: 70px;
+     .dropmenu {
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+     }
+
+     .dropmenu-show {
+          transform: rotate(90deg);
+     }
+
+     .dropnav {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background-color: var(--bg-secondary);
+          padding: 1rem;
+          margin: 0;
+          border-radius: 0 0 15px 15px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     }
+
+     .dropnav a {
+          color: var(--text-primary);
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          transition: background-color 0.2s ease;
+     }
+
+     .dropnav a:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+     }
+
+     .nav {
+          margin-bottom: 2rem;
+     }
+}
+
+@media (min-width: 577px) {
+     .dropmenu {
+          display: none;
      }
 }
 
