@@ -2,6 +2,9 @@ import formidable from 'formidable';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 
+const lastRequestTime = new Map();
+const LIMIT_INTERVAL = 10 * 1000;
+
 export const config = {
     api: {
         bodyParser: false,
@@ -13,8 +16,22 @@ export default async function handler(req, res) {
         return res.status(405).json({ success: false, message: 'Method Not Allowed' });
     }
 
-    const form = formidable({});
+    const ip =
+        req.headers['x-forwarded-for']?.split(',')[0] ||
+        req.socket.remoteAddress ||
+        'unknown';
+    const now = Date.now();
+    const lastTime = lastRequestTime.get(ip) || 0;
 
+    if (now - lastTime < LIMIT_INTERVAL) {
+        return res.status(429).json({
+            success: false,
+            message: 'Veuillez patienter 10 secondes avant de renvoyer une candidature.',
+        });
+    }
+
+    lastRequestTime.set(ip, now)
+    const form = formidable({});
     try {
         const [fields, files] = await form.parse(req);
 
