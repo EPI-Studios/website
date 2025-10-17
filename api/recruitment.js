@@ -49,6 +49,20 @@ export default async function handler(req, res) {
         const cvFile = files.cv?.[0];
         let attachments = [];
         if (cvFile) {
+            const originalName = cvFile.originalFilename.toLocaleLowerCase();
+            const isValidExtension = originalName.endsWith(".pdf")
+            const hasMultipleExtensions = originalName.match(/\.[A-z]{3}/g).length == 1
+            if (!(isValidExtension && hasMultipleExtensions)) {
+                try {
+                    fs.unlinkSync(cvFile.filepath);
+                } catch (err) {
+                    console.error('Erreur suppression fichier non conforme :', err);
+                }
+                return res.status(400).json({
+                    success: false,
+                    message: 'Le type de fichier est invalide ou suspect. Seuls les fichiers PDF simples sont acceptés.',
+                });
+            }
             attachments.push({
                 filename: cvFile.originalFilename,
                 content: fs.createReadStream(cvFile.filepath),
@@ -68,12 +82,11 @@ export default async function handler(req, res) {
             html: emailContent,
             attachments: attachments,
         });
-
         if (applicantEmail) {
             const firstName = Array.isArray(fields.firstname) ? fields.firstname[0] : fields.firstname;
             const lastName = Array.isArray(fields.name) ? fields.name[0] : fields.name;
             const fullName = `${firstName} ${lastName}`;
-            
+
             await transporter.sendMail({
                 from: `"EPI Studios" <${process.env.EMAIL_FROM}>`,
                 to: applicantEmail,
