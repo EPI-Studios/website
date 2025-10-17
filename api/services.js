@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
         let emailContent = '<h1>Nouvelle commande de service !</h1>';
         for (const key in fields) {
-            emailContent += `<p><strong>${key}:</strong> ${fields[key]}</p>`;
+            emailContent += `<p><strong>${key.replace(/(<([^>]+)>)/ig, '')}:</strong> ${fields[key].replace(/(<([^>]+)>)/ig, '')}</p>`;
         }
 
         const cdcFile = files.cdc?.[0];

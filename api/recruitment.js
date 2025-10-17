@@ -2,6 +2,8 @@ import formidable from 'formidable';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 
+
+
 export const config = {
     api: {
         bodyParser: false,
@@ -20,7 +22,9 @@ export default async function handler(req, res) {
         from: process.env.EMAIL_FROM
     });
 
-    const form = formidable({});
+    const form = formidable({
+        maxFieldsSize: 10 * 1024 * 1024, // 10MB
+    });
 
     try {
         const [fields, files] = await form.parse(req);
@@ -39,7 +43,7 @@ export default async function handler(req, res) {
         let emailContent = '<h1>Nouvelle candidature !</h1>';
         for (const key in fields) {
             const value = Array.isArray(fields[key]) ? fields[key][0] : fields[key];
-            emailContent += `<p><strong>${key}:</strong> ${value}</p>`;
+            emailContent += `<p><strong>${key.replace(/(<([^>]+)>)/ig, '')}:</strong> ${value.replace(/(<([^>]+)>)/ig, '')}</p>`;
         }
 
         const cvFile = files.cv?.[0];
@@ -75,9 +79,9 @@ export default async function handler(req, res) {
                 to: applicantEmail,
                 subject: 'Confirmation de réception de votre candidature - EPI Studios',
                 html: `
-                    <h1>Bonjour ${fullName},</h1>
+                    <h1>Bonjour ${fullName.replace(/(<([^>]+)>)/ig, '')},</h1>
                     
-                    <p>Nous avons bien reçu votre candidature pour le poste de <strong>${poste}</strong> au sein d'EPI Studios.</p>
+                    <p>Nous avons bien reçu votre candidature pour le poste de <strong>${poste.replace(/(<([^>]+)>)/ig, '')}</strong> au sein d'EPI Studios.</p>
                     
                     <p>Votre demande est actuellement en cours d'examen par notre équipe. Nous étudions avec attention chaque candidature et nous efforçons de répondre dans les meilleurs délais.</p>
                     
