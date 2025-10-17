@@ -31,7 +31,9 @@ export default async function handler(req, res) {
     }
 
     lastRequestTime.set(ip, now)
-    const form = formidable({});
+    const form = formidable({
+        maxFieldsSize: 10 * 1024 * 1024, // 10MB
+    });
     try {
         const [fields, files] = await form.parse(req);
 
@@ -53,6 +55,20 @@ export default async function handler(req, res) {
         const cdcFile = files.cdc?.[0];
         let attachments = [];
         if (cdcFile) {
+            const originalName = cdcFile.originalFilename.toLocaleLowerCase();
+            const isValidExtension = originalName.endsWith(".pdf")
+            const hasMultipleExtensions = originalName.match(/\.[A-z]{3}/g).length == 1
+            if (!(isValidExtension && hasMultipleExtensions)) {
+                try {
+                    fs.unlinkSync(cdcFile.filepath);
+                } catch (err) {
+                    console.error('Erreur suppression fichier non conforme :', err);
+                }
+                return res.status(400).json({
+                    success: false,
+                    message: 'Le type de fichier est invalide ou suspect. Seuls les fichiers PDF simples sont acceptés.',
+                });
+            }
             attachments.push({
                 filename: cdcFile.originalFilename,
                 content: fs.createReadStream(cdcFile.filepath),
