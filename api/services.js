@@ -49,15 +49,17 @@ export default async function handler(req, res) {
 
         let emailContent = '<h1>Nouvelle commande de service !</h1>';
         for (const key in fields) {
-            emailContent += `<p><strong>${key.replace(/(<([^>]+)>)/ig, '')}:</strong> ${fields[key].replace(/(<([^>]+)>)/ig, '')}</p>`;
+            const value = Array.isArray(fields[key]) ? fields[key][0] : fields[key];
+            emailContent += `<p><strong>${key.replace(/(<([^>]+)>)/ig, '')}:</strong> ${value.replace(/(<([^>]+)>)/ig, '')}</p>`;
         }
 
         const cdcFile = files.cdc?.[0];
         let attachments = [];
-        if (cdcFile) {
+        if (cdcFile && cdcFile.originalFilename) {
             const originalName = cdcFile.originalFilename.toLocaleLowerCase();
             const isValidExtension = originalName.endsWith(".pdf")
-            const hasMultipleExtensions = originalName.match(/\.[A-z]{3}/g).length == 1
+            const extensionMatches = originalName.match(/\.[A-z]{3}/g);
+            const hasMultipleExtensions = extensionMatches && extensionMatches.length == 1;
             if (!(isValidExtension && hasMultipleExtensions)) {
                 try {
                     fs.unlinkSync(cdcFile.filepath);

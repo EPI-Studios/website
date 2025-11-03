@@ -65,10 +65,11 @@ export default async function handler(req, res) {
 
         const cvFile = files.cv?.[0];
         let attachments = [];
-        if (cvFile) {
+        if (cvFile && cvFile.originalFilename) {
             const originalName = cvFile.originalFilename.toLocaleLowerCase();
             const isValidExtension = originalName.endsWith(".pdf")
-            const hasMultipleExtensions = originalName.match(/\.[A-z]{3}/g).length == 1
+            const extensionMatches = originalName.match(/\.[A-z]{3}/g);
+            const hasMultipleExtensions = extensionMatches && extensionMatches.length == 1;
             if (!(isValidExtension && hasMultipleExtensions)) {
                 try {
                     fs.unlinkSync(cvFile.filepath);
