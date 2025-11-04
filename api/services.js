@@ -30,10 +30,12 @@ export default async function handler(req, res) {
         });
     }
 
-    lastRequestTime.set(ip, now)
+    lastRequestTime.set(ip, now);
+
     const form = formidable({
         maxFieldsSize: 10 * 1024 * 1024, // 10MB
     });
+
     try {
         const [fields, files] = await form.parse(req);
 
@@ -55,34 +57,34 @@ export default async function handler(req, res) {
 
         let attachments = [];
 
-if (files.cdc) {
-    const cdcFile = Array.isArray(files.cdc) ? files.cdc[0] : files.cdc;
+        if (files.cdc && files.cdc.length > 0) {
+            const cdcFile = Array.isArray(files.cdc) ? files.cdc[0] : files.cdc;
 
-    if (cdcFile && cdcFile.originalFilename) {
-        const originalName = cdcFile.originalFilename.toLowerCase();
-        const isValidExtension = originalName.endsWith(".pdf");
-        const extensionMatches = originalName.match(/\.[A-z]{3}/g);
-        const hasMultipleExtensions = extensionMatches && extensionMatches.length === 1;
+            if (cdcFile && cdcFile.originalFilename && cdcFile.originalFilename.trim() !== '') {
+                const originalName = cdcFile.originalFilename.toLowerCase();
+                const isValidExtension = originalName.endsWith(".pdf");
+                const extensionMatches = originalName.match(/\.[A-z]{3}/g);
+                const hasMultipleExtensions = extensionMatches && extensionMatches.length === 1;
 
-        if (!(isValidExtension && hasMultipleExtensions)) {
-            try {
-                fs.unlinkSync(cdcFile.filepath);
-            } catch (err) {
-                console.error('Erreur suppression fichier non conforme :', err);
+                if (!(isValidExtension && hasMultipleExtensions)) {
+                    try {
+                        fs.unlinkSync(cdcFile.filepath);
+                    } catch (err) {
+                        console.error('Erreur suppression fichier non conforme :', err);
+                    }
+                    return res.status(400).json({
+                        success: false,
+                        message: 'Le type de fichier est invalide ou suspect. Seuls les fichiers PDF simples sont acceptés.',
+                    });
+                }
+
+                attachments.push({
+                    filename: cdcFile.originalFilename,
+                    content: fs.createReadStream(cdcFile.filepath),
+                    contentType: cdcFile.mimetype,
+                });
             }
-            return res.status(400).json({
-                success: false,
-                message: 'Le type de fichier est invalide ou suspect. Seuls les fichiers PDF simples sont acceptés.',
-            });
         }
-
-        attachments.push({
-            filename: cdcFile.originalFilename,
-            content: fs.createReadStream(cdcFile.filepath),
-            contentType: cdcFile.mimetype,
-        });
-    }
-}
 
         await transporter.sendMail({
             from: `"Site EPI Studios" <${process.env.EMAIL_FROM}>`,
