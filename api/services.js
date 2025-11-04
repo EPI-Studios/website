@@ -34,6 +34,8 @@ export default async function handler(req, res) {
 
     const form = formidable({
         maxFieldsSize: 10 * 1024 * 1024, // 10MB
+        allowEmptyFiles: true,
+        minFileSize: 0
     });
 
     try {
