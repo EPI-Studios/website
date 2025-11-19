@@ -70,7 +70,7 @@
           Rejoignez EPI Studio ! 
      </p> 
 
-     <!--TODO: Les radios buttons sont pas jolis donc je vais les refaire avec JS-->
+
      <form id="preform" class="preform">
           <p>Pour quel poste candidatez-vous ?</p>
           
@@ -137,7 +137,14 @@
      </section>
      
      <hr>
-
+          <!--! C'est pour dire que en gros la période de recrutements est OFF, J'ai pas envie de toucher au JS j'ai peur de tout casser-->
+          <form class="conditional-question" id="devform">
+          <div><strong>
+               <p>Période de recrutement terminée !</p>
+               <p>Nous ne recrutons malhereusement plus de développeurs/euses. Une prochaine période de recrutement
+                    sera annoncée au cours de l'année 2026!</p></strong>
+          </div>
+          </form>
      <!-- ! Form présentation pour tous les rôles-->
      <form class="first-question" id="first-question">
           
@@ -186,6 +193,7 @@
 
 
      <!-- ! Form développement -->
+     <!-- * Ce form est désactivé puisque la période de recrutement est off.
      <form class="conditional-question" id="devform">
 
           <p class="title">Experience</p>
@@ -229,7 +237,9 @@
           placeholder="Oui, j'ai déjà travaillé avec des clients...">
 
           <button class="nextbutton">Suivant</button>
-     </form>
+     </form>-->
+     
+     
 
 
      <!-- ! Form graphiste -->
