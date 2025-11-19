@@ -2,6 +2,9 @@ import formidable from 'formidable';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 
+const lastRequestTime = new Map();
+const LIMIT_INTERVAL = 10 * 1000;
+
 export const config = {
     api: {
         bodyParser: false,
@@ -13,7 +16,27 @@ export default async function handler(req, res) {
         return res.status(405).json({ success: false, message: 'Method Not Allowed' });
     }
 
-    const form = formidable({});
+    const ip =
+        req.headers['x-forwarded-for']?.split(',')[0] ||
+        req.socket.remoteAddress ||
+        'unknown';
+    const now = Date.now();
+    const lastTime = lastRequestTime.get(ip) || 0;
+
+    if (now - lastTime < LIMIT_INTERVAL) {
+        return res.status(429).json({
+            success: false,
+            message: 'Veuillez patienter 10 secondes avant de renvoyer une candidature.',
+        });
+    }
+
+    lastRequestTime.set(ip, now);
+
+    const form = formidable({
+        maxFieldsSize: 10 * 1024 * 1024, // 10MB
+        allowEmptyFiles: true,
+        minFileSize: 0
+    });
 
     try {
         const [fields, files] = await form.parse(req);
@@ -30,17 +53,39 @@ export default async function handler(req, res) {
 
         let emailContent = '<h1>Nouvelle commande de service !</h1>';
         for (const key in fields) {
-            emailContent += `<p><strong>${key}:</strong> ${fields[key]}</p>`;
+            const value = Array.isArray(fields[key]) ? fields[key][0] : fields[key];
+            emailContent += `<p><strong>${key.replace(/(<([^>]+)>)/ig, '')}:</strong> ${value.replace(/(<([^>]+)>)/ig, '')}</p>`;
         }
 
-        const cdcFile = files.cdc?.[0];
         let attachments = [];
-        if (cdcFile) {
-            attachments.push({
-                filename: cdcFile.originalFilename,
-                content: fs.createReadStream(cdcFile.filepath),
-                contentType: cdcFile.mimetype,
-            });
+
+        if (files.cdc && files.cdc.length > 0) {
+            const cdcFile = Array.isArray(files.cdc) ? files.cdc[0] : files.cdc;
+
+            if (cdcFile && cdcFile.originalFilename && cdcFile.originalFilename.trim() !== '') {
+                const originalName = cdcFile.originalFilename.toLowerCase();
+                const isValidExtension = originalName.endsWith(".pdf");
+                const extensionMatches = originalName.match(/\.[A-z]{3}/g);
+                const hasMultipleExtensions = extensionMatches && extensionMatches.length === 1;
+
+                if (!(isValidExtension && hasMultipleExtensions)) {
+                    try {
+                        fs.unlinkSync(cdcFile.filepath);
+                    } catch (err) {
+                        console.error('Erreur suppression fichier non conforme :', err);
+                    }
+                    return res.status(400).json({
+                        success: false,
+                        message: 'Le type de fichier est invalide ou suspect. Seuls les fichiers PDF simples sont acceptés.',
+                    });
+                }
+
+                attachments.push({
+                    filename: cdcFile.originalFilename,
+                    content: fs.createReadStream(cdcFile.filepath),
+                    contentType: cdcFile.mimetype,
+                });
+            }
         }
 
         await transporter.sendMail({

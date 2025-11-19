@@ -15,9 +15,9 @@
 
 /* Styles généraux */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: #F2F1EC;
-    color: #333;
+    color: #536056;
     line-height: 1.6;
     margin: 0;
 }
@@ -110,19 +110,21 @@ header h1, header p {
 }
 
 .commander-btn {
-    background-color: #5cb85c;
+    background-color: #536056;
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1em;
     width: 100%;
     margin-top: auto;
+    transition: background-color 0.2s, transform 0.3s;
 }
 
 .commander-btn:hover {
-    background-color: #4cae4c;
+    background-color: #3f4841;
+    transform: scale(1.05);
 }
 
 .card-full-text {
@@ -243,8 +245,7 @@ input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="number"]:hover,
 textarea:hover {
-    background-color: #0080ff;
-
+    background-color: #ebeced;
 }
 
 form {
@@ -269,18 +270,21 @@ form div label {
 }
 
 form button, .backtoindex {
-    background-color: #5cb85c;
+    background-color: #536056;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 1em;
+    font-weight: 600;
     max-width: 60%;
     margin: 0 auto;
+    transition: background-color 0.2s, transform 0.3s;
 }
 form button:hover, .backtoindex:hover {
-    background-color: #4cae4c;
+    background-color: #3f4841;
+    transform: scale(1.05);
 }
 
 

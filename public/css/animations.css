@@ -35,12 +35,10 @@
 
 
 .bust1:hover, .feuille1:hover,.bustelogo:hover, .feuille-left:hover, .bust-center:hover {
-     animation: transform 1s linear;
      animation: spin2 1s linear;
 }
 .feuille2:hover, .feuille-right:hover {
      transform-origin: center center;
-     animation: transform 1s linear;
      animation: spin3 1s linear;
 }
 
@@ -65,7 +63,7 @@
 input[type="text"]:hover,
 input[type="email"]:hover,
 input[type="number"]:hover,
-textarea {
+textarea:hover {
      background-color: #ebeced;
 }
 
