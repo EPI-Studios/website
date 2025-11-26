@@ -24,6 +24,49 @@ a {
 }
 
 
+
+/* * Section Annonce*/
+
+.caseannonce {
+    margin-bottom: 100px;
+    background-color: rgb(178, 203, 224);
+    max-width: 50%;
+    margin: 0px auto 100px auto;
+    padding: 30px;
+    border: rgb(62, 62, 125) 3px solid;
+    border-radius: 30px;
+}
+
+.titleannonce {
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+    text-decoration: underline 1px black solid;
+}
+.caseannonce p {
+    text-align: center;
+    margin: 0px;
+    color: black;
+}
+.buttonnotif {
+    background-color: rgb(206, 217, 225);
+    padding: 1rem 2.5rem;
+    border-radius: 35px;
+    font-size: 1.5rem;
+    /* 24px */
+    font-weight: 500;
+    display: block;
+    margin: 1rem auto;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    max-width: 100px;
+}
+.buttonnotif:hover {
+    background-color: rgb(223, 231, 237);
+        transform: scale(1.1);
+        transition: transform 0.5s linear;
+}
+
 /* -- SECTION PRESENTATION (HERO) -- */
 .presepi {
     margin-top: -80px; /* Fait remonter la section pour chevaucher la navbar */
