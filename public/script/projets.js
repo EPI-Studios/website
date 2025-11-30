@@ -8,6 +8,6 @@ gaelphoto.addEventListener('click', function() {
      clickCount++;
 
      if (clickCount === 10) {
-          window.location.href = '../templates/easteregg.html';
+          window.location.href = '/easteregg';
      };
 });
