@@ -1,5 +1,11 @@
 {
   "version": 2,
+  "routes": [
+    {
+      "src": "^/templates/.*$",
+      "status": 404
+    }
+  ],
   "rewrites": [
     {
       "source": "/",
