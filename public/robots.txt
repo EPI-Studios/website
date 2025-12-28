@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /api/
+Disallow: /templates/
+Allow: /
+Sitemap: https://epistudios.fr/sitemap.xml
