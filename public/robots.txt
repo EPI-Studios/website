@@ -1,6 +1,8 @@
 User-agent: *
-Disallow: /credits
-Disallow: /cgv
-Disallow: /mentions
+Disallow: /credits/
+Disallow: /cgv/
+Disallow: /mentions/
+Disallow: /api/
+Disallow: /templates/
 Allow: /
 Sitemap: https://epistudios.fr/sitemap.xml
