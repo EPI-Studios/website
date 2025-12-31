@@ -132,22 +132,24 @@ a {
 }
 
 .buttonprojets {
-    background-color: var(--bg-main);
-    padding: 1rem 2.5rem;
-    border-radius: 35px;
-    font-size: 1.5rem; /* 24px */
-    font-weight: 500;
-    display: inline-block;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease;
+  background-color: var(--bg-main);
+  padding: 1rem 2.5rem;
+  border-radius: 35px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 1rem;
+  transition:
+    background-color 150ms ease,
+    box-shadow 200ms ease,
+    transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .buttonprojets:hover {
-    background-color: #e8e7e2;
-    transform: scale(1.1);
-    transition: transform 0.5s linear;
+  background-color: #e8e7e2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
-
 
 /* -- KEYFRAMES POUR L'ANIMATION -- */
 @keyframes quickSpin {

@@ -18,7 +18,7 @@ function checkIfVisible() {
           const elementTop = rect.top; 
           const windowHeight = window.innerHeight;
 
-          if (elementTop < windowHeight / 2){ // If the element position in the viewport is inferior than the window Height
+          if (elementTop < windowHeight / 1.25){ // If the element position in the viewport is inferior than the window Height
                element.style.opacity = '1'; // Divided by the number, then set the opacity to 1 and return to the the position
                element.style.transform ='translateY(0)';
           }

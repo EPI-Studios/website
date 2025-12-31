@@ -1,75 +1,88 @@
-
-/* * Templates */
 :root {
-     --bg-main: #F2F1EC;
-     --bg-secondary: #DADCD9;
-     --text-main: #536056;
-     --font-main: 'Inter', sans-serif;
-     --text-hover: #3f4841;
-}
-@keyframes spin2 {
-     0% { transform: scale(1.2); }
-     50% { transform: rotate(0deg);}
-     100% { transform: rotate(360deg);}
+  --anim-fast: 150ms;
+  --anim-medium: 250ms;
+  --anim-slow: 400ms;
+  --ease-ui: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes spin3 {
-  0% { transform: scaleX(-1) scale(1.2); } /* Le scaleX(-1) est appliqué en premier */
-  50% { transform: scaleX(-1) rotate(-1deg); }
-  100% { transform: scaleX(-1) rotate(-360deg); }
+.backgroundnavbar,
+.new-navbar-container {
+  transition: transform var(--anim-medium) var(--ease-ui),
+              box-shadow var(--anim-fast) ease;
 }
 
-/* * Animations */
-
-.backgroundnavbar:hover, .new-navbar-container:hover {
-     transform: scale(1.1);
-     box-shadow: 0px 2px 11px #a1a2a0;
-     transition: transform 0.5s linear, box-shadow 0.2s linear;
+.backgroundnavbar:hover,
+.new-navbar-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
-.serv1:hover, .proj1:hover, .nav-link:hover {
-     color: var(--text-hover);
-     transform: scale(1.3);
-     transition: transform 0.5s;
+.serv1,
+.proj1,
+.nav-link {
+  transition: transform var(--anim-fast) var(--ease-ui),
+              color var(--anim-fast) ease;
 }
 
-
-.bust1:hover, .feuille1:hover,.bustelogo:hover, .feuille-left:hover, .bust-center:hover {
-     animation: spin2 1s linear;
-}
-.feuille2:hover, .feuille-right:hover {
-     transform-origin: center center;
-     animation: spin3 1s linear;
+.serv1:hover,
+.proj1:hover,
+.nav-link:hover {
+  color: var(--text-hover);
+  transform: scale(1.05);
 }
 
-
-.card:hover {
-     transform: scale(1.05);
-     transition: transform 0.5s linear;
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
 }
 
-.faq-item:hover {
-     transform: scale(1.05);
-     transition: transform 0.5s linear;
+@keyframes wiggle-flip {
+  0%   { transform: scaleX(-1) rotate(0deg); }
+  50%  { transform: scaleX(-1) rotate(6deg); }
+  100% { transform: scaleX(-1) rotate(0deg); }
 }
 
-/* Animation Index.html partenaires*/
+.bust1:hover,
+.feuille1:hover,
+.bustelogo:hover,
+.feuille-left:hover,
+.bust-center:hover,
+.feuille-right:hover {
+  animation: wiggle 300ms var(--ease-ui);
+}
+
+.feuille2:hover {
+  animation: wiggle-flip 300ms var(--ease-ui);
+}
+
+.card,
+.faq-item,
+.cardtemplate,
+.project-card {
+  transition: transform var(--anim-medium) var(--ease-ui),
+              box-shadow var(--anim-medium) ease;
+}
+
+.card:hover,
+.faq-item:hover,
+.cardtemplate:hover,
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.partners img {
+  transition: transform var(--anim-fast) var(--ease-ui);
+}
+
 .partners img:hover {
-     transform: scale(1.1);
-     transition: transform 0.2s linear;
+  transform: scale(1.04);
 }
 
-/* Animations of recrutement*/
-input[type="text"]:hover,
-input[type="email"]:hover,
-input[type="number"]:hover,
-textarea:hover {
-     background-color: #ebeced;
-}
-
-
-/* * Animations de projet.html*/
-.cardtemplate:hover, .project-card:hover {
-     transform: scale(1.1);
-     transition: transform 0.5s linear;
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+  transition: background-color var(--anim-fast) ease;
 }
